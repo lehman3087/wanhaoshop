@@ -1,0 +1,82 @@
+<?php
+/**
+ * 前台品牌分类
+ *
+ *
+ *
+ **by 好商城V3 www.33hao.com 运营版*/
+
+
+defined('InShopNC') or exit('Access Invalid!');
+class bid_documentControl extends BaseSellerControl {
+    
+    public function __construct() {
+        parent::__construct();
+      
+    }
+    
+    public function addBdOp($param) {
+        
+        if (chksubmit()) {
+            var_dump($_REQUEST);
+            
+            $data['bid_work_id']=
+            $data['bid_title']=
+            $data['bid_highlight']=
+            $data['bid_budget']=
+            $data['bid_content']=
+            $data['bid_addtime']=time();
+            $data['bid_dc_id']=
+            exit();
+            
+            
+        }
+        
+       // $this->profile_menu('decoration', 'decoration');
+      //  Tpl::showpage('decoration_bd_form');
+    }
+    
+    
+        public function editBdOp($param) {
+        $condition['dw_id']=$_REQUEST['id'];
+        $model_work = Model('decoration');
+        $bid=$model_work->getRequestInfo($condition);
+        Tpl::output('bid', $bid);
+        
+       // $this->profile_menu('decoration', 'decoration');
+        Tpl::showpage('decoration_bd_form');
+    }
+    
+    
+    
+    public function bd_listOp() {
+        $model_work = Model('decoration');
+       
+        $where = array();
+        //$where['store_id'] = $_SESSION['store_id'];
+        if (intval($_GET['stc_id']) > 0) {
+            $where['goods_stcids'] = array('like', '%,' . intval($_GET['stc_id']) . ',%');
+        }
+        if (trim($_GET['keyword']) != '') {
+            switch ($_GET['search_type']) {
+                case 0:
+                    $where['goods_name'] = array('like', '%' . trim($_GET['keyword']) . '%');
+                    break;
+                case 1:
+                    $where['goods_serial'] = array('like', '%' . trim($_GET['keyword']) . '%');
+                    break;
+                case 2:
+                    $where['goods_commonid'] = intval($_GET['keyword']);
+                    break;
+            }
+        }
+        $work_list = $model_work->getworkCommonOnlineList($where);
+        
+        //var_dump($work_list);
+        Tpl::output('show_page', $model_work->showpage());
+        Tpl::output('work_list', $work_list);
+
+        //$this->profile_menu('work_list', 'work_list');
+        Tpl::showpage('decoration_bid_list');
+    }
+}

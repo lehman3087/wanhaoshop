@@ -1,0 +1,18 @@
+[2015-11-17 15:37:38] /33hao/admin/index.php?act=decoration&op=works ( act=decoration&op=works ) 
+ERR: Db Error: Unknown column 'id' in 'order clause'
+SELECT COUNT(*) AS nc_count FROM `33hao_decoration_work` ORDER BY id desc LIMIT 1  
+[2015-11-17 15:37:38] /33hao/admin/index.php?act=decoration&op=works ( act=decoration&op=works ) 
+ERR: Db Error: Unknown column 'id' in 'order clause'
+SELECT * FROM `33hao_decoration_work` ORDER BY id desc LIMIT 0,10  
+[2015-11-17 15:37:39] /33hao/admin/index.php?act=decoration&op=works ( act=decoration&op=works ) 
+ERR: Db Error: Unknown column 'id' in 'order clause'
+SELECT COUNT(*) AS nc_count FROM `33hao_decoration_work` ORDER BY id desc LIMIT 1  
+[2015-11-17 15:37:39] /33hao/admin/index.php?act=decoration&op=works ( act=decoration&op=works ) 
+ERR: Db Error: Unknown column 'id' in 'order clause'
+SELECT * FROM `33hao_decoration_work` ORDER BY id desc LIMIT 0,10  
+[2015-11-17 15:37:46] /33hao/admin/index.php?act=decoration&op=works ( act=decoration&op=works ) 
+ERR: Db Error: Unknown column 'id' in 'order clause'
+SELECT COUNT(*) AS nc_count FROM `33hao_decoration_work` ORDER BY id desc LIMIT 1  
+[2015-11-17 15:37:46] /33hao/admin/index.php?act=decoration&op=works ( act=decoration&op=works ) 
+ERR: Db Error: Unknown column 'id' in 'order clause'
+SELECT * FROM `33hao_decoration_work` ORDER BY id desc LIMIT 0,10  

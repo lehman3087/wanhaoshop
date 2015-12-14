@@ -1,0 +1,99 @@
+<?php
+
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+defined('InShopNC') or exit('Access Invalid!');
+class decorationControl extends mobileMemberControl{
+    public function __construct() {
+		parent::__construct();
+	}
+        public function addBTOp($param) {
+            $model_designers = Model('decoration');
+            $insert['dw_con_name']=$_REQUEST['dw_con_name'];
+            $insert['dw_con_mobile']=$_REQUEST['dw_con_mobile'];
+            $insert['dw_category']=$_REQUEST['dw_category'];
+            $insert['dw_budget']=$_REQUEST['dw_budget'];
+            $insert['dw_area']=$_REQUEST['dw_area'];
+            $insert['dw_style']=$_REQUEST['dw_style'];
+            $insert['dw_address']=$_REQUEST['dw_address'];
+            $insert['dw_house_type']=$_REQUEST['dw_house_type'];
+            $insert['dw_house_type']=$_REQUEST['dw_file_name'];
+            $result=$model_designers->addBt($insert);
+            if($result){
+                 output_data('10200');
+            }
+        }
+        
+        public function addRequestOp($param) {
+            
+            $model_designers = Model('decoration');
+            $insert['dw_con_name']=$_REQUEST['dw_con_name'];
+            $insert['dw_con_mobile']=$_REQUEST['dw_con_mobile'];
+            $insert['dw_category']=$_REQUEST['dw_category'];
+            $insert['dw_budget']=$_REQUEST['dw_budget'];
+            $insert['dw_area']=$_REQUEST['dw_area'];
+            $insert['dw_style']=$_REQUEST['dw_style'];
+            $insert['dw_address']=$_REQUEST['dw_address'];
+            $insert['dw_house_type']=$_REQUEST['dw_house_type'];
+            $insert['dw_file_paths']=$_REQUEST['dw_file_paths'];
+            $insert['dw_user_id']=$_REQUEST['user_id'];
+            $insert['dw_user_name']=$_REQUEST['user_name'];
+            $insert['dw_addtime']=time();
+            
+            $result=$model_designers->addBt($insert);
+            if($result){
+                 output_suc('10200');
+            }else{
+                output_error('10500');
+            }
+        }
+        
+        public function delRequestOp() {
+            $model_db = Model('decoration');
+            $condition['dw_id']=$_REQUEST['id'];
+            $result=$model_db->delBt($condition);
+            if($result){
+                 output_suc('10200');
+            }else{
+                output_error('10500');
+            }
+        }
+        
+         public function cancelRequestOp() {
+            $model_db = Model('decoration');
+            //$condition['dw_user_id']=$_REQUEST['user_id'];
+            $update['dw_rusult']=!empty($_REQUEST['result'])?$_REQUEST['result']:'个人原因';
+            $update['dw_state']=0;
+          //  $dw_user_id=$_REQUEST['dw_id'];
+            $condition['dw_id']=$_REQUEST['dw_id'];
+            $result=$model_db->cancelBt($update,$condition);
+            if($result){
+                 output_suc('10200');
+            }else{
+                output_error('10500');
+            }
+        }
+        
+         public function selctBidOp() {
+            $model_db = Model('bid_target');
+            //$condition['dw_user_id']=$_REQUEST['user_id'];
+            $data['bt_user_id']=  intval($_REQUEST['user_id']);
+            $data['bt_dc_id']=intval($_REQUEST['dc_id']);
+            $data['bt_evaluation']=$_REQUEST['evaluation'];
+            $result=$model_db->selectBid($data);
+            if($result){
+                 output_suc('10200');
+            }else{
+                output_error('10500');
+            }
+        }
+        
+        
+
+        
+        
+}

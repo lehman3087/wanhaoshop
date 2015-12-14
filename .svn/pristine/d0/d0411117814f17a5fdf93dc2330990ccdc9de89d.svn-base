@@ -1,0 +1,44 @@
+<?php
+
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+defined('InShopNC') or exit('Access Invalid!');
+class designer_workControl extends mobileHomeControl{
+	public function __construct() {
+        parent::__construct();
+    }
+    
+    
+    public function designer_work_listOp(){
+        $post=$this->read_json();
+ //       $arr=objectToArray($post);
+ //       $_REQUEST=array_merge($_REQUEST,$arr);
+ //       $goods_id = intval($_REQUEST ['goods_id']);
+        
+       $model_designer_work = Model('designer_work');
+//        // $model_search = Model('search');
+//       // $condition['designer_work.sn_if_show']=1;
+//        if(!empty($_REQUEST['id']) && intval($_REQUEST['id']) > 0) {
+//        $condition = " and designer_work.id=".$_REQUEST['id'];
+//        } elseif (!empty($_REQUEST['conditions']['matchValue'])) {
+//        $condition['designer_work.sn_name|designer_work.sn_content'] = array('like', '%' . $_REQUEST['conditions']['matchValue'] . '%');
+//        }
+        //$condition['sn_name|sn_content'] = array('like', '%' . 'abc'. '%');
+        
+     //   output_data(array('desginers_work_list' => $post));
+       
+        $designers_work_list = $model_designer_work->getDesignerWorkList($post->conditions,'*',$post->pageCount);
+        
+       // output_data(array('desginers_work_list' => $post));
+         
+        $page_count = $model_designer_work->getDesignerWorktotalpage($post->conditions);
+        //优先从全文索引库里查找
+        
+        output_data(array('desginers_work_list' => $designers_work_list), mobile_page($page_count));
+        
+    }
+}

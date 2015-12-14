@@ -1,0 +1,131 @@
+<?php
+/**
+ * 商品图片统一调用函数
+ *
+ *
+ *
+ * @package    function* www.33hao.com 专业团队 提供售后服务
+ */
+
+defined('InShopNC') or exit('Access Invalid!');
+/**
+ *  获得装修需求缩略图
+ * @param type $work
+ * @param string $type
+ * @return type
+ */
+function wthumb($work = array(), $type = ''){
+//    $type_array = explode(',_', ltrim(GOODS_IMAGES_EXT, '_'));
+//    if (!in_array($type, $type_array)) {
+//        $type = '240';
+//    }
+
+    if (empty($work)){
+        return UPLOAD_SITE_URL.'/'.defaultGoodsImage($type);
+    }
+    
+   
+
+    if (empty($work['sn_work_pic'])) {
+        return UPLOAD_SITE_URL.'/'.defaultGoodsImage($type);
+    }
+    
+    
+    $search_array = explode(',', GOODS_IMAGES_EXT);
+    
+    $file = str_ireplace($search_array,'',$work['sn_work_pic']);
+    
+    $fname = basename($file);
+
+   
+    if (preg_match('/^(\d+_)/',$fname)){
+        $user_id = substr($fname,0,strpos($fname,'_'));
+    }else{
+        $user_id = $work['user_id'];
+    }
+//    return BASE_UPLOAD_PATH.'/'.ATTACH_DWORK.'/'.$user_id.'/'.$file;
+//    exit();
+       
+    $file = $type == '' ? $file : str_ireplace('.', '_' . $type . '.', $file);
+    if (!file_exists(BASE_UPLOAD_PATH.'/'.ATTACH_DWORK.'/'.$user_id.'/'.$file)){
+        return UPLOAD_SITE_URL.'/'.defaultGoodsImage($type);
+    }
+    $thumb_host = UPLOAD_SITE_URL.'/'.ATTACH_DWORK;
+    return $thumb_host.'/'.$user_id.'/'.$file;
+
+}
+
+
+ function DidBid($dw_id,$store_id) {
+     $model_decoration = Model ( 'bid' );
+     $condition['bid_dc_id']=$store_id;
+      $condition['bid_work_id']=$dw_id;
+     $bid = $model_decoration->getBidList($condition);
+     
+     if($bid){
+         $model_dt = Model ( 'bid_target' );
+        $condition['bt_dc_id']=$store_id;
+        $condition['bt_rid']=$dw_id;
+        $bt = $model_dt->getBTList($condition);
+        return !empty($bt)?false:true;
+     }
+     return !empty($bid)?false:true; 
+     
+}
+
+function wdcthumb($file, $type = '',$store_id){
+//    $type_array = explode(',_', ltrim(GOODS_IMAGES_EXT, '_'));
+//    if (!in_array($type, $type_array)) {
+//        $type = '240';
+//    }
+
+    if (empty($file)){
+        return UPLOAD_SITE_URL.'/'.defaultGoodsImage($type);
+    }
+    
+    
+
+//    if (empty($work['sn_work_pic'])) {
+//        return UPLOAD_SITE_URL.'/'.defaultGoodsImage($type);
+//    }
+//    
+ //  exit('1');
+    //$search_array = explode(',', GOODS_IMAGES_EXT);
+    
+   // $file = str_ireplace($search_array,'',$work['sn_work_pic']);
+    
+//    $fname = basename($file);
+//
+//   
+//    if (preg_match('/^(\d+_)/',$fname)){
+//        $user_id = substr($fname,0,strpos($fname,'_'));
+//    }else{
+//        $user_id = $work['sn_store_id'];
+//    }
+////    return BASE_UPLOAD_PATH.'/'.ATTACH_DWORK.'/'.$user_id.'/'.$file;
+////    exit();
+//       
+//    $file = $type == '' ? $file : str_ireplace('.', '_' . $type . '.', $file);
+    if (!file_exists(BASE_UPLOAD_PATH.'/'.ATTACH_DWORK.'/'.$store_id.'/'.$file)){
+       // exit('1');
+        return UPLOAD_SITE_URL.'/'.defaultGoodsImage($type);
+    }
+    $thumb_host = UPLOAD_SITE_URL.'/'.ATTACH_DWORK;
+    return $thumb_host.'/'.$store_id.'/'.$file;
+
+}
+
+
+function get_work_designer($param) {
+    $model_decoration = Model ( 'designer' );
+    $condition['id']=$param;
+    $designer = $model_decoration->getDesignerInfo($condition);
+    return $designer['sn_title'];
+}
+
+function get_decoration_company($param) {
+    $model_decoration = Model ( 'store' );
+    $store=$model_decoration->getStoreInfoByID($param);
+    return $store['store_name'];
+      
+}

@@ -49,7 +49,6 @@ class member_paymentControl extends mobileMemberControl {
         $this->_api_pay($result['data'], $mb_payment_info);
     }
     
-    
     //在线支付统一返回
     public function app_payOp($param) {
         

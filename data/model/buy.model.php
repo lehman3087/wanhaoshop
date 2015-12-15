@@ -1004,11 +1004,11 @@ class buyModel {
         $input_if_vat = ($input_if_vat == 'allow_vat') ? true : false;
 
         //是否支持货到付款
-        $input_if_offpay = $this->buyDecrypt($post['offpay_hash'], $member_id);
-        if (!in_array($input_if_offpay,array('allow_offpay','deny_offpay'))) {
-            return array('error' => '订单保存出现异常，请重试');
-        }
-        $input_if_offpay = ($input_if_offpay == 'allow_offpay') ? true : false;
+//        $input_if_offpay = $this->buyDecrypt($post['offpay_hash'], $member_id);
+//        if (!in_array($input_if_offpay,array('allow_offpay','deny_offpay'))) {
+//            return array('error' => '订单保存出现异常，请重试');
+//        }
+//        $input_if_offpay = ($input_if_offpay == 'allow_offpay') ? true : false;
 
         //付款方式:在线支付/货到付款(online/offline)
         if (!in_array($post['pay_name'],array('online','offline'))) {

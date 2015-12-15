@@ -49,23 +49,65 @@ class member_paymentControl extends mobileMemberControl {
         $this->_api_pay($result['data'], $mb_payment_info);
     }
     
+    
+    //在线支付统一返回
+    public function app_payOp($param) {
+        
+        if($this->payment_code=='wxpay'){
+            $this->getpWpayOp();
+        }else if($this->payment_code=='alipay'){
+            
+            $this->getpAlipayOp();
+        }
+    }
+    
+    
  
     public function getpAlipayOp() {
+   
+	$pay_sn = $_REQUEST['pay_sn'];
 
-        $pay_sn = $_REQUEST['pay_sn'];
-        
-        $inc_file = BASE_PATH.DS.'api'.DS.'payment'.DS.'wxpay'.DS.'wpay.php';
+        $model_mb_payment = Model('mb_payment');
+        $logic_payment = Logic('payment');
 
-    	if(!is_file($inc_file)){
-            output_error('支付接口不存在');
-    	}
+        $condition = array();
+        $condition['payment_code'] = $this->payment_code;
+        $mb_payment_info = $model_mb_payment->getMbPaymentOpenInfo($condition);
         
-        $payment_api = new wpay();
+      //  var_dump($mb_payment_info);
+        if(!$mb_payment_info) {
+            output_error('123');
+        }
+       
+        //重新计算所需支付金额
+        $result = $logic_payment->getRealOrderInfo($pay_sn, $this->member_info['member_id']);
+        
+        // var_dump($this->member_info['member_id']);
+        
+        if(!$result['state']) {
+            
+            output_error($result['msg']);
+        }
 
-        $return = $payment_api->getpWpay($pay_sn);
+        //第三方API支付
+        $this->_api_ali_pay($result['data'], $mb_payment_info);
         
-        var_dump($return);
+        
     }
+    
+    
+//    public function functionName($param) {
+//        $pay_sn = $_REQUEST['pay_sn'];
+//        $condition = array();
+//        $condition['payment_code'] = $this->payment_code;
+//        $mb_payment_info = $model_mb_payment->getMbPaymentOpenInfo($condition);
+//        if(!$mb_payment_info) {
+//            output_error('系统不支持选定的支付方式');
+//        }
+//        $payment_api = new $this->payment_code();
+//        $return = $payment_api->returnParam($pay_sn);
+//        
+//    }
     
     public function getpWpayOp() {
 
@@ -78,8 +120,7 @@ class member_paymentControl extends mobileMemberControl {
     	}
         
         $payment_api = new wpay();
-
-        $return = $payment_api->getpWpay($pay_sn);
+        $return = $payment_api->returnAliParam($pay_sn);
         
         var_dump($return);
     }
@@ -144,7 +185,8 @@ class member_paymentControl extends mobileMemberControl {
 	 * 第三方在线支付接口
 	 *
 	 */
-	private function _api_pay($order_pay_info, $mb_payment_info) {
+        private function _api_pay($order_pay_info, $mb_payment_info) {
+            
         $inc_file = BASE_PATH.DS.'api'.DS.'payment'.DS.$this->payment_code.DS.$this->payment_code.'.php';
     	if(!is_file($inc_file)){
             output_error('支付接口不存在');
@@ -160,6 +202,28 @@ class member_paymentControl extends mobileMemberControl {
         echo $return;
     	exit;
 	}
+        
+       private function _api_ali_pay($order_pay_info, $mb_payment_info) {
+           
+        $inc_file = BASE_PATH.DS.'api'.DS.'payment'.DS.$this->payment_code.DS.$this->payment_code.'.php';
+    	if(!is_file($inc_file)){
+            
+            output_error('支付接口不存在');
+    	}
+    	require($inc_file);
+        $param = array();
+    	$param = $mb_payment_info['payment_config'];
+        $param['order_sn'] = $order_pay_info['pay_sn'];
+        $param['order_amount'] = $order_pay_info['api_pay_amount'];
+        $param['order_type'] = ($order_pay_info['order_type'] == 'real_order' ? 'r' : 'v');
+        $payment_api = new $this->payment_code();
+        
+        $return = $payment_api->returnParam($param);
+        echo $return;
+    	exit;
+	}
+        
+        
         
         
         	/**

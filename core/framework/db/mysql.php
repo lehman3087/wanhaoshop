@@ -203,6 +203,7 @@ class Db{
                 
 		$result = self::query($sql,$host);
 		if ($result === false) $result = array();
+                
 		while ($tmp=mysql_fetch_array($result,MYSQL_ASSOC)){
 			$array[] = $tmp;
 		}

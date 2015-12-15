@@ -119,7 +119,16 @@ class rec_applysModel{
                         $name='mansong_name';
                         $remark='remark';
                         break;
-
+                    case 'p_xianshi':
+                        $id='xianshi_id';
+                        $name='xianshi_name';
+                        $remark='xianshi_explain';
+                        break;
+                    case 'p_bundling':
+                        $id='bl_id';
+                        $name='bl_name';
+                        $remark='';
+                        break;
                     default:
                         break;
                 }
@@ -176,7 +185,7 @@ class rec_applysModel{
 			if ($condition['adp_apply_state_in'] == ''){
 				$conditionStr	.= " and adp_apply_state in ('')";
 			}else{
-				$conditionStr	.= " and adp_apply_state in ('{$condition['adp_apply_state_in']}')";
+				$conditionStr	.= " and adp_apply_state in ({$condition['adp_apply_state_in']})";
 			}
 		}
                 

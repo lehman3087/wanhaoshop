@@ -136,8 +136,7 @@ class designerControl extends BaseSellerControl {
 //                    $upload->set('thumb_height', '480,296,168');
 //                    $upload->set('thumb_ext', '_max,_mid,_small');
 //                    $upload->set('fprefix', $_SESSION['store_id']);
-                
-                
+                               
 		$result = $upload->upfile($_REQUEST['file_id']);
 
 

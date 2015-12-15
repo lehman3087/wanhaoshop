@@ -100,30 +100,22 @@ class store_promotion_boothControl extends BaseSellerControl {
 //		if(empty($activity_info) || $activity_info['activity_type'] != '1' || $activity_info['activity_state'] != 1 || $activity_info['activity_start_date']>time() || $activity_info['activity_end_date']<time()){
 //			showMessage(Language::get('store_activity_not_exists'),'index.php?act=store_activity&op=store_activity','html','error');
 //		}
+                
 		Tpl::output('adv_info',$adv_info);
+                
 		$list	= array();//声明存放活动细节的数组
 		//查询商品分类列表
-//		$gc	= Model('goods_class');
-//		$gc_list	= $gc->getTreeClassList(3);
-//		foreach($gc_list as $k=>$gc){
-//			$gc_list[$k]['gc_name']	= '';
-//			$gc_list[$k]['gc_name']	= str_repeat("&nbsp;",$gc['deep']*2).$gc['gc_name'];
-//		}
-//		Tpl::output('gc_list',$gc_list);
-		//查询品牌列表
-		$brand	= Model('brand');
-		$brand_list	= $brand->getBrandList(array());
-		Tpl::output('brand_list',$brand_list);
 		//查询活动细节信息
 		$rec_apply_model	= Model('rec_applys');
-		$list	= $rec_apply_model->getActivitiesJoinList(array('adp_id'=>"$adp_id",'store_id'=>"{$_SESSION['store_id']}",'adp_apply_state_in'=>"'0','1','3'",'group'=>'adp_apply_state asc'));
+		$list	= $rec_apply_model->getActivitiesJoinList(array('adp_id'=>"$adp_id",'store_id'=>"{$_SESSION['store_id']}",'group'=>'adp_apply_state asc'));
 		//构造通过与审核中商品的编号数组,以便在下方待选列表中,不显示这些内容
+//                    var_dump($list);
+//                    exit();
                 
-               // var_dump($list);
 		$item_ids	= array();
 		if(is_array($list) and !empty($list)){
 			foreach($list as $k=>$v){
-				$item_ids[]	= $v['item_id'];
+				$item_ids[] = $v['item_id'];
 			}
 		}
 		Tpl::output('list',$list);
@@ -143,8 +135,9 @@ class store_promotion_boothControl extends BaseSellerControl {
                         $condition5['bl_name']=array('like' ,'%'.trim($_GET['name']).'%');
                         $condition5['store_id']=$_SESSION['store_id'];
                         $bl=Model('p_bundling')->getBundlingOpenList($condition5);
+
                         if(!empty($bl)){
-                            foreach ($pos as $key => $value) {
+                            foreach ($bl as $key => $value) {
                                $po['type']='p_bundling';
                                $po['id']=$value['bl_id'];
                                $po['name']=$value['bl_name'];

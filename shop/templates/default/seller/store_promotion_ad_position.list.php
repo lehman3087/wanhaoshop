@@ -19,7 +19,7 @@
     <?php foreach($output['ad_positions'] as $k => $v){?>
     <tr>
       <td></td>
-      <td class="tl"><a target="_blank" href="index.php?act=activity&activity_id=<?php echo $v['rec_id'];?>"><?php echo $v['title']; ?></a></td>
+      <td class="tl"><a target="_blank" href="index.php?act=activity&activity_id=<?php echo $v['rec_id'];?>"><?php echo $v['title']; ?></a><?php if($v['rec_stop_time']<time()){ echo "----<span style='color:red'>活动已结束"; }?></td>
       <td class="tl"><?php if($v['pic_type']==0){ echo '文字';}else{ echo '图片 高度:'.$v['pic_height'].'宽度:'.$v['pic_width'];}?></td>
       <td class="goods-time"></td>
       <td class="goods-time"></td>

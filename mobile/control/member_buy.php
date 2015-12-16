@@ -28,6 +28,8 @@ class member_buyControl extends mobileMemberControl {
         
         //得到购买数据
         $result = $logic_buy->buyStep1($cart_id, $_REQUEST['ifcart'], $this->member_info['member_id'], $this->member_info['store_id']);
+        
+        
         if(!$result['state']) {
            // var_dump($result['msg']);
             output_error($result['msg']);

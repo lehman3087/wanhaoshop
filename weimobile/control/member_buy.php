@@ -34,6 +34,7 @@ class member_buyControl extends mobileMemberControl {
             $result = $result['data'];
         }
         
+        
         //整理数据
         $store_cart_list = array();
         foreach ($result['store_cart_list'] as $key => $value) {

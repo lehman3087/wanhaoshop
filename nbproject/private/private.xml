@@ -12,22 +12,12 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Applications/MAMP/htdocs/33hao/wap/js/config.js</file>
-            <file>file:/Applications/MAMP/htdocs/33hao/data/model/cart.model.php</file>
-            <file>file:/Applications/MAMP/htdocs/33hao/wap/js/template.js</file>
-            <file>file:/Applications/MAMP/htdocs/33hao/wap/shop.html</file>
-            <file>file:/Applications/MAMP/htdocs/33hao/wap/js/shop.js</file>
-            <file>file:/Applications/MAMP/htdocs/33hao/mobile/control/shop.php</file>
-            <file>file:/Applications/MAMP/htdocs/33hao/wap/js/common.js</file>
-            <file>file:/Applications/MAMP/htdocs/33hao/mobile/control/index.php</file>
-            <file>file:/Applications/MAMP/htdocs/33hao/shop/templates/default/store/store_snstraceinfo.php</file>
-            <file>file:/Applications/MAMP/htdocs/33hao/shop/templates/default/store/store_snshome.php</file>
-            <file>file:/Applications/MAMP/htdocs/33hao/admin/include/menu.php</file>
-            <file>file:/Applications/MAMP/htdocs/33hao/wap/index.html</file>
+            <file>file:/Applications/MAMP/htdocs/33hao/mobile/control/member_address.php</file>
+            <file>file:/Applications/MAMP/htdocs/33hao/data/log/20151216.log</file>
+            <file>file:/Applications/MAMP/htdocs/33hao/admin/control/promotion_xianshi.php</file>
+            <file>file:/Applications/MAMP/htdocs/33hao/data/model/p_xianshi.model.php</file>
             <file>file:/Applications/MAMP/htdocs/33hao/mobile/control/member_cart.php</file>
-            <file>file:/Applications/MAMP/htdocs/33hao/mobile/control/store.php</file>
-            <file>file:/Applications/MAMP/htdocs/33hao/wap/js/index.js</file>
-            <file>file:/Applications/MAMP/htdocs/33hao/mobile/control/sns.php</file>
+            <file>file:/Applications/MAMP/htdocs/33hao/mobile/control/activity_pub.php</file>
         </group>
     </open-files>
 </project-private>

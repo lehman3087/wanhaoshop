@@ -70,7 +70,7 @@ class member_paymentControl extends mobileMemberControl {
 
     	if(!is_file($inc_file)){
               //  var_dump($inc_file);
-            output_error('支付接口不存在');
+            output_error($inc_file);
     	}
         require($inc_file);
         $payment_api = new wxpay();

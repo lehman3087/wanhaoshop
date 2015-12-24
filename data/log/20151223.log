@@ -1,0 +1,348 @@
+[2015-12-23 00:32:10] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: Table '33hao.33hao_good' doesn't exist
+SELECT * FROM `33hao_good` as `good`  WHERE  bl_id=249
+[2015-12-23 00:32:10] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: Table '33hao.33hao_good' doesn't exist
+SELECT * FROM `33hao_good` as `good`  WHERE  bl_id=248
+[2015-12-23 00:32:10] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: Table '33hao.33hao_news' doesn't exist
+SELECT * FROM `33hao_news` as `news`  WHERE  mansong_id=16
+[2015-12-23 00:32:10] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: Unknown column 'mansong_id' in 'where clause'
+SELECT * FROM `33hao_activity` as `activity`  WHERE  mansong_id=12
+[2015-12-23 00:32:19] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: Table '33hao.33hao_good' doesn't exist
+SELECT * FROM `33hao_good` as `good`  WHERE  bl_id=249
+[2015-12-23 00:32:19] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: Table '33hao.33hao_good' doesn't exist
+SELECT * FROM `33hao_good` as `good`  WHERE  bl_id=248
+[2015-12-23 00:32:19] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: Table '33hao.33hao_news' doesn't exist
+SELECT * FROM `33hao_news` as `news`  WHERE  mansong_id=16
+[2015-12-23 00:32:19] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: Unknown column 'mansong_id' in 'where clause'
+SELECT * FROM `33hao_activity` as `activity`  WHERE  mansong_id=12
+[2015-12-23 00:32:55] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28&rec_content_type=1&name=1 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=272' at line 1
+SELECT * FROM `33hao_good` as `good`  WHERE  =272
+[2015-12-23 00:33:31] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28&rec_content_type=4&name=1 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=272' at line 1
+SELECT * FROM `33hao_good` as `good`  WHERE  =272
+[2015-12-23 00:33:41] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28&rec_content_type=4&name=1 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=272' at line 1
+SELECT * FROM `33hao_good` as `good`  WHERE  =272
+[2015-12-23 00:33:41] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28&rec_content_type=4&name=1 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=12' at line 1
+SELECT * FROM `33hao_activity` as `activity`  WHERE  =12
+[2015-12-23 00:38:30] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=272' at line 1
+SELECT * FROM `33hao_good` as `good`  WHERE  =272
+[2015-12-23 00:38:30] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=12' at line 1
+SELECT * FROM `33hao_activity` as `activity`  WHERE  =12
+[2015-12-23 00:40:18] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28&rec_content_type=1&name=1 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=272' at line 1
+SELECT * FROM `33hao_good` as `good`  WHERE  =272
+[2015-12-23 00:40:18] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28&rec_content_type=1&name=1 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=12' at line 1
+SELECT * FROM `33hao_activity` as `activity`  WHERE  =12
+[2015-12-23 00:40:37] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28&rec_content_type=1&name=1 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=272' at line 1
+SELECT * FROM `33hao_good` as `good`  WHERE  =272
+[2015-12-23 00:40:37] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28&rec_content_type=1&name=1 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=12' at line 1
+SELECT * FROM `33hao_activity` as `activity`  WHERE  =12
+[2015-12-23 00:42:01] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28&rec_content_type=1&name=1 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=272' at line 1
+SELECT * FROM `33hao_good` as `good`  WHERE  =272
+[2015-12-23 00:42:01] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28&rec_content_type=1&name=1 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=12' at line 1
+SELECT * FROM `33hao_activity` as `activity`  WHERE  =12
+[2015-12-23 00:42:22] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28&rec_content_type=1&name=1 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=272' at line 1
+SELECT * FROM `33hao_good` as `good`  WHERE  =272
+[2015-12-23 00:42:22] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28&rec_content_type=1&name=1 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=12' at line 1
+SELECT * FROM `33hao_activity` as `activity`  WHERE  =12
+[2015-12-23 00:44:11] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28&rec_content_type=1&name=1 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=272' at line 1
+SELECT * FROM `33hao_good` as `good`  WHERE  =272
+[2015-12-23 00:44:11] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28&rec_content_type=1&name=1 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=12' at line 1
+SELECT * FROM `33hao_activity` as `activity`  WHERE  =12
+[2015-12-23 00:44:38] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28&rec_content_type=1&name=1 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=272' at line 1
+SELECT * FROM `33hao_good` as `good`  WHERE  =272
+[2015-12-23 00:44:38] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28&rec_content_type=1&name=1 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=12' at line 1
+SELECT * FROM `33hao_activity` as `activity`  WHERE  =12
+[2015-12-23 00:44:48] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28&rec_content_type=1&name=1 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=272' at line 1
+SELECT * FROM `33hao_good` as `good`  WHERE  =272
+[2015-12-23 00:44:48] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28&rec_content_type=1&name=1 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=12' at line 1
+SELECT * FROM `33hao_activity` as `activity`  WHERE  =12
+[2015-12-23 00:45:32] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28&rec_content_type=1&name=1 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=272' at line 1
+SELECT * FROM `33hao_good` as `good`  WHERE  =272
+[2015-12-23 00:45:32] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28&rec_content_type=1&name=1 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=12' at line 1
+SELECT * FROM `33hao_activity` as `activity`  WHERE  =12
+[2015-12-23 00:46:02] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28&rec_content_type=1&name=1 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=272' at line 1
+SELECT * FROM `33hao_good` as `good`  WHERE  =272
+[2015-12-23 00:46:02] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28&rec_content_type=1&name=1 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=12' at line 1
+SELECT * FROM `33hao_activity` as `activity`  WHERE  =12
+[2015-12-23 00:46:11] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28&rec_content_type=1&name=1 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=272' at line 1
+SELECT * FROM `33hao_good` as `good`  WHERE  =272
+[2015-12-23 00:46:11] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28&rec_content_type=1&name=1 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=12' at line 1
+SELECT * FROM `33hao_activity` as `activity`  WHERE  =12
+[2015-12-23 00:47:24] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28&rec_content_type=1&name=1 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=272' at line 1
+SELECT * FROM `33hao_good` as `good`  WHERE  =272
+[2015-12-23 00:47:24] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28&rec_content_type=1&name=1 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=12' at line 1
+SELECT * FROM `33hao_activity` as `activity`  WHERE  =12
+[2015-12-23 00:49:59] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28&rec_content_type=1&name=1 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=272' at line 1
+SELECT * FROM `33hao_good` as `good`  WHERE  =272
+[2015-12-23 00:49:59] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28&rec_content_type=1&name=1 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=12' at line 1
+SELECT * FROM `33hao_activity` as `activity`  WHERE  =12
+[2015-12-23 00:50:56] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28&rec_content_type=1&name=1 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=272' at line 1
+SELECT * FROM `33hao_good` as `good`  WHERE  =272
+[2015-12-23 00:50:56] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28&rec_content_type=1&name=1 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=12' at line 1
+SELECT * FROM `33hao_activity` as `activity`  WHERE  =12
+[2015-12-23 00:52:53] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28&rec_content_type=1&name=1 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=272' at line 1
+SELECT * FROM `33hao_good` as `good`  WHERE  =272
+[2015-12-23 00:52:53] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28&rec_content_type=1&name=1 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=12' at line 1
+SELECT * FROM `33hao_activity` as `activity`  WHERE  =12
+[2015-12-23 00:54:36] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28&rec_content_type=1&name=1 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=272' at line 1
+SELECT * FROM `33hao_good` as `good`  WHERE  =272
+[2015-12-23 00:54:36] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28&rec_content_type=1&name=1 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=12' at line 1
+SELECT * FROM `33hao_activity` as `activity`  WHERE  =12
+[2015-12-23 00:55:01] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28&rec_content_type=1&name=1 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=272' at line 1
+SELECT * FROM `33hao_good` as `good`  WHERE  =272
+[2015-12-23 00:55:01] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28&rec_content_type=1&name=1 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=12' at line 1
+SELECT * FROM `33hao_activity` as `activity`  WHERE  =12
+[2015-12-23 00:56:05] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28&rec_content_type=1&name=1 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=272' at line 1
+SELECT * FROM `33hao_good` as `good`  WHERE  =272
+[2015-12-23 00:56:05] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28&rec_content_type=1&name=1 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=12' at line 1
+SELECT * FROM `33hao_activity` as `activity`  WHERE  =12
+[2015-12-23 00:56:10] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28&rec_content_type=1&name=1 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=272' at line 1
+SELECT * FROM `33hao_good` as `good`  WHERE  =272
+[2015-12-23 00:56:10] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28&rec_content_type=1&name=1 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=12' at line 1
+SELECT * FROM `33hao_activity` as `activity`  WHERE  =12
+[2015-12-23 00:56:56] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28&rec_content_type=1&name=1 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=272' at line 1
+SELECT * FROM `33hao_good` as `good`  WHERE  =272
+[2015-12-23 00:56:56] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28&rec_content_type=1&name=1 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=12' at line 1
+SELECT * FROM `33hao_activity` as `activity`  WHERE  =12
+[2015-12-23 00:57:14] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28&rec_content_type=1&name=1 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=272' at line 1
+SELECT * FROM `33hao_good` as `good`  WHERE  =272
+[2015-12-23 00:57:14] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28&rec_content_type=1&name=1 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=12' at line 1
+SELECT * FROM `33hao_activity` as `activity`  WHERE  =12
+[2015-12-23 01:05:57] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28&rec_content_type=1&name=1 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=272' at line 1
+SELECT * FROM `33hao_good` as `good`  WHERE  =272
+[2015-12-23 01:05:57] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28&rec_content_type=1&name=1 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=12' at line 1
+SELECT * FROM `33hao_activity` as `activity`  WHERE  =12
+[2015-12-23 01:07:01] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28&rec_content_type=1&name=1 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=272' at line 1
+SELECT * FROM `33hao_good` as `good`  WHERE  =272
+[2015-12-23 01:07:01] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28&rec_content_type=1&name=1 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=12' at line 1
+SELECT * FROM `33hao_activity` as `activity`  WHERE  =12
+[2015-12-23 01:14:29] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28&rec_content_type=1&name=1 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=272' at line 1
+SELECT * FROM `33hao_good` as `good`  WHERE  =272
+[2015-12-23 01:14:29] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28&rec_content_type=1&name=1 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=12' at line 1
+SELECT * FROM `33hao_activity` as `activity`  WHERE  =12
+[2015-12-23 01:15:20] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28&rec_content_type=1&name=1 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=272' at line 1
+SELECT * FROM `33hao_good` as `good`  WHERE  =272
+[2015-12-23 01:15:20] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28&rec_content_type=1&name=1 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=12' at line 1
+SELECT * FROM `33hao_activity` as `activity`  WHERE  =12
+[2015-12-23 01:18:13] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28&rec_content_type=1&name=1 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=272' at line 1
+SELECT * FROM `33hao_good` as `good`  WHERE  =272
+[2015-12-23 01:18:13] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28&rec_content_type=1&name=1 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=12' at line 1
+SELECT * FROM `33hao_activity` as `activity`  WHERE  =12
+[2015-12-23 09:48:13] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28&rec_content_type=1&name=1 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=272' at line 1
+SELECT * FROM `33hao_good` as `good`  WHERE  =272
+[2015-12-23 09:48:13] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28&rec_content_type=1&name=1 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=12' at line 1
+SELECT * FROM `33hao_activity` as `activity`  WHERE  =12
+[2015-12-23 09:49:13] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28&rec_content_type=1&name=1 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=272' at line 1
+SELECT * FROM `33hao_good` as `good`  WHERE  =272
+[2015-12-23 09:49:13] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28&rec_content_type=1&name=1 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=12' at line 1
+SELECT * FROM `33hao_activity` as `activity`  WHERE  =12
+[2015-12-23 09:50:06] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28&rec_content_type=1&name=1 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=272' at line 1
+SELECT * FROM `33hao_good` as `good`  WHERE  =272
+[2015-12-23 09:50:06] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28&rec_content_type=1&name=1 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=12' at line 1
+SELECT * FROM `33hao_activity` as `activity`  WHERE  =12
+[2015-12-23 09:50:23] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28&rec_content_type=1&name=1 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=272' at line 1
+SELECT * FROM `33hao_good` as `good`  WHERE  =272
+[2015-12-23 09:50:23] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28&rec_content_type=1&name=1 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=12' at line 1
+SELECT * FROM `33hao_activity` as `activity`  WHERE  =12
+[2015-12-23 09:54:25] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=272' at line 1
+SELECT * FROM `33hao_good` as `good`  WHERE  =272
+[2015-12-23 09:54:25] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=12' at line 1
+SELECT * FROM `33hao_activity` as `activity`  WHERE  =12
+[2015-12-23 09:54:28] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28&rec_content_type=1&name=2 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=272' at line 1
+SELECT * FROM `33hao_good` as `good`  WHERE  =272
+[2015-12-23 09:54:28] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28&rec_content_type=1&name=2 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=12' at line 1
+SELECT * FROM `33hao_activity` as `activity`  WHERE  =12
+[2015-12-23 10:01:03] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28&rec_content_type=1&name=2 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=272' at line 1
+SELECT * FROM `33hao_good` as `good`  WHERE  =272
+[2015-12-23 10:01:03] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28&rec_content_type=1&name=2 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=12' at line 1
+SELECT * FROM `33hao_activity` as `activity`  WHERE  =12
+[2015-12-23 10:06:46] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28&rec_content_type=1&name=2 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=272' at line 1
+SELECT * FROM `33hao_good` as `good`  WHERE  =272
+[2015-12-23 10:06:46] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28&rec_content_type=1&name=2 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=12' at line 1
+SELECT * FROM `33hao_activity` as `activity`  WHERE  =12
+[2015-12-23 10:07:38] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28&rec_content_type=1&name=2 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=272' at line 1
+SELECT * FROM `33hao_good` as `good`  WHERE  =272
+[2015-12-23 10:07:38] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=28&rec_content_type=1&name=2 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=12' at line 1
+SELECT * FROM `33hao_activity` as `activity`  WHERE  =12
+[2015-12-23 10:19:05] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: Table '33hao.33hao_good' doesn't exist
+SELECT * FROM `33hao_good` as `good`  WHERE  bl_id=249
+[2015-12-23 10:19:05] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: Table '33hao.33hao_good' doesn't exist
+SELECT * FROM `33hao_good` as `good`  WHERE  bl_id=248
+[2015-12-23 10:19:05] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: Table '33hao.33hao_news' doesn't exist
+SELECT * FROM `33hao_news` as `news`  WHERE  mansong_id=16
+[2015-12-23 10:19:05] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: Unknown column 'mansong_id' in 'where clause'
+SELECT * FROM `33hao_activity` as `activity`  WHERE  mansong_id=12
+[2015-12-23 10:19:50] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=27&rec_content_type=4&name=a ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=11' at line 1
+SELECT * FROM `33hao_activity` as `activity`  WHERE  =11
+[2015-12-23 10:23:53] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=27&rec_content_type=4&name=a ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=11' at line 1
+SELECT * FROM `33hao_activity` as `activity`  WHERE  =11
+[2015-12-23 11:22:35] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=27 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=11' at line 1
+SELECT * FROM `33hao_activity` as `activity`  WHERE  =11
+[2015-12-23 11:56:57] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=27 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=11' at line 1
+SELECT * FROM `33hao_activity` as `activity`  WHERE  =11
+[2015-12-23 11:57:37] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=27 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=11' at line 1
+SELECT * FROM `33hao_activity` as `activity`  WHERE  =11
+[2015-12-23 11:58:01] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=27 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=11' at line 1
+SELECT * FROM `33hao_activity` as `activity`  WHERE  =11
+[2015-12-23 11:58:19] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=27 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=11' at line 1
+SELECT * FROM `33hao_activity` as `activity`  WHERE  =11
+[2015-12-23 11:59:11] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=27 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=11' at line 1
+SELECT * FROM `33hao_activity` as `activity`  WHERE  =11
+[2015-12-23 11:59:15] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=27 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=11' at line 1
+SELECT * FROM `33hao_activity` as `activity`  WHERE  =11
+[2015-12-23 12:00:23] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=27 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=11' at line 1
+SELECT * FROM `33hao_activity` as `activity`  WHERE  =11
+[2015-12-23 12:01:13] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=27 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=11' at line 1
+SELECT * FROM `33hao_activity` as `activity`  WHERE  =11
+[2015-12-23 12:03:16] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=27 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=11' at line 1
+SELECT * FROM `33hao_activity` as `activity`  WHERE  =11
+[2015-12-23 12:04:03] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=27 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=11' at line 1
+SELECT * FROM `33hao_activity` as `activity`  WHERE  =11
+[2015-12-23 12:05:01] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=27 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=11' at line 1
+SELECT * FROM `33hao_activity` as `activity`  WHERE  =11
+[2015-12-23 12:05:10] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=27&rec_content_type=2&name=1 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=11' at line 1
+SELECT * FROM `33hao_activity` as `activity`  WHERE  =11
+[2015-12-23 12:11:45] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=27&rec_content_type=1&name=1 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=11' at line 1
+SELECT * FROM `33hao_activity` as `activity`  WHERE  =11
+[2015-12-23 12:52:18] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: Table '33hao.33hao_good' doesn't exist
+SELECT * FROM `33hao_good` as `good`  WHERE  bl_id=249
+[2015-12-23 12:52:18] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: Table '33hao.33hao_good' doesn't exist
+SELECT * FROM `33hao_good` as `good`  WHERE  bl_id=248
+[2015-12-23 12:52:18] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: Table '33hao.33hao_news' doesn't exist
+SELECT * FROM `33hao_news` as `news`  WHERE  mansong_id=16
+[2015-12-23 12:53:28] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=27&rec_content_type=1&name=1 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: Table '33hao.33hao_good' doesn't exist
+SELECT * FROM `33hao_good` as `good`  WHERE  activity_id=272
+[2015-12-23 13:46:44] /33hao/admin/index.php?act=rec_position&op=deal&adp_apply_id=16&state=1&adpid=27 ( act=rec_position&op=deal ) 
+ERR: Db Error: Table '33hao.33hao_rec_applys1' doesn't exist
+UPDATE `33hao_rec_applys1` AS `rec_applys1` SET adp_apply_state = '0'  WHERE adp_id=27 and adp_apply_id not in(16)
+[2015-12-23 13:50:45] /33hao/admin/index.php?act=rec_position&op=deal&adp_apply_id=16&state=1&adpid=27 ( act=rec_position&op=deal ) 
+ERR: Db Error: Table '33hao.33hao_rec_applys1' doesn't exist
+UPDATE `33hao_rec_applys1` AS `rec_applys1` SET adp_apply_state = '0'  WHERE adp_id=27 and adp_apply_id not in(16)
+[2015-12-23 18:57:36] /33hao/admin/index.php?act=upload&op=image_upload ( act=upload&op=image_upload ) 
+ERR: Db Error: Column 'aclass_id' cannot be null
+INSERT  INTO `33hao_album_pic` (apic_name,apic_tag,aclass_id,apic_cover,apic_size,apic_spec,upload_time,store_id) VALUES ('567771a9Na3bd4ae4','',NULL,'05042122557161175.jpg','97582','730x454','1450868255','0')
+[2015-12-23 18:59:33] /33hao/admin/index.php?act=upload&op=image_upload ( act=upload&op=image_upload ) 
+ERR: Db Error: Column 'aclass_id' cannot be null
+INSERT  INTO `33hao_album_pic` (apic_name,apic_tag,aclass_id,apic_cover,apic_size,apic_spec,upload_time,store_id) VALUES ('1','',NULL,'05042123728050553.jpg','30140','729x223','1450868372','0')
+[2015-12-23 19:21:22] /33hao/admin/index.php?act=upload&op=image_upload ( act=upload&op=image_upload ) 
+ERR: Db Error: Column 'aclass_id' cannot be null
+INSERT  INTO `33hao_album_pic` (apic_name,apic_tag,aclass_id,apic_cover,apic_size,apic_spec,upload_time,store_id) VALUES ('4dj','',NULL,'05042136820258726.png','86210','317x269','1450869681','0')
+[2015-12-23 19:21:42] /33hao/admin/index.php?act=upload&op=image_upload ( act=upload&op=image_upload ) 
+ERR: Db Error: Column 'aclass_id' cannot be null
+INSERT  INTO `33hao_album_pic` (apic_name,apic_tag,aclass_id,apic_cover,apic_size,apic_spec,upload_time,store_id) VALUES ('1','',NULL,'05042137021638632.jpg','30140','729x223','1450869702','0')
+[2015-12-23 19:31:29] /33hao/admin/index.php?act=album&op=pic_list&item=des ( act=album&op=pic_list ) 
+ERR: Db Error: Table '33hao.33hao_' doesn't exist
+SELECT count(*) as count FROM `33hao_` as ``  
+[2015-12-23 19:31:29] /33hao/admin/index.php?act=album&op=pic_list&item=des ( act=album&op=pic_list ) 
+ERR: Db Error: Table '33hao.33hao_' doesn't exist
+SELECT * FROM `33hao_` as ``   order by apic_id desc limit 0,14
+[2015-12-23 19:35:33] /33hao/admin/index.php?act=upload&op=image_upload ( act=upload&op=image_upload ) 
+ERR: Db Error: Column 'aclass_id' cannot be null
+INSERT  INTO `33hao_album_pic` (apic_name,apic_tag,aclass_id,apic_cover,apic_size,apic_spec,upload_time,store_id) VALUES ('4dj','',NULL,'05042145338069579.png','86210','317x269','1450870533','0')
+[2015-12-23 19:36:21] /33hao/admin/index.php?act=upload&op=image_upload ( act=upload&op=image_upload ) 
+ERR: Db Error: Column 'aclass_id' cannot be null
+INSERT  INTO `33hao_album_pic` (apic_name,apic_tag,aclass_id,apic_cover,apic_size,apic_spec,upload_time,store_id) VALUES ('4dj','',NULL,'05042145818540812.png','86210','317x269','1450870581','0')

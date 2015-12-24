@@ -114,6 +114,34 @@ function cthumb($file, $type = '', $store_id = false) {
 }
 
 
+/**
+ * 取得商品缩略图的完整URL路径，接收图片名称与店铺ID
+ *
+ * @param string $file 图片名称
+ * @param string $type 缩略图尺寸类型，值为60,160,240,310,1280
+ * @param mixed $store_id 店铺ID 如果传入，则返回图片完整URL,如果为假，返回系统默认图
+ * @return string
+ */
+function rec_thumb($file, $type = '', $store_id = false) {
+    $type_array = explode(',_', ltrim(GOODS_IMAGES_EXT, '_'));
+    if (!in_array($type, $type_array)) {
+        $type = '';
+    }
+    if (empty($file)) {
+        return UPLOAD_SITE_URL . '/' . defaultGoodsImage ( $type );
+    }
+    $search_array = explode(',', GOODS_IMAGES_EXT);
+    $file = str_ireplace($search_array,'',$file);
+    $fname = basename($file);
+
+    // 本地存储时，增加判断文件是否存在，用默认图代替
+    if ( !file_exists(BASE_UPLOAD_PATH . '/' . ATTACH_REC_POSITION  . '/' . ($type == '' ? $file : str_ireplace('.', '_' . $type . '.', $file)) )) {
+        return UPLOAD_SITE_URL.'/'.defaultGoodsImage($type);
+    }
+    $thumb_host = UPLOAD_SITE_URL . '/' . ATTACH_REC_POSITION;
+    return $thumb_host  . '/' . ($type == '' ? $file : str_ireplace('.', '_' . $type . '.', $file));
+}
+
 
 /**
  * 取得买家缩略图的完整URL路径

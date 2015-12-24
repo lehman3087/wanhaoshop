@@ -119,7 +119,7 @@
   'promotion_allow' => '1',
   'promotion_booth_goods_sum' => '10',
   'promotion_booth_price' => '20',
-  'promotion_bundling_goods_sum' => '5',
+  'promotion_bundling_goods_sum' => '6',
   'promotion_bundling_price' => '20',
   'promotion_bundling_sum' => '50',
   'promotion_mansong_price' => '20',

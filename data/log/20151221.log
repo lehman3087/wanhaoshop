@@ -1,0 +1,42 @@
+[2015-12-21 11:00:04] /33hao/admin/index.php?act=rec_position&op=rec_save ( act=rec_position&op=rec_save ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ','2',NULL,'111111111','a:1:{s:6:\"target\";i:1;}')' at line 1
+INSERT  INTO `33hao_rec_position` (rec_state,rec_start_time,rec_stop_time,rec_position,rec_content_type,title,content) VALUES ('1',,,'2',NULL,'111111111','a:1:{s:6:\"target\";i:1;}')
+[2015-12-21 13:32:41] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=22&rec_content_type=1&name=2 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=249' at line 1
+SELECT * FROM `33hao_good` as `good`  WHERE  =249
+[2015-12-21 13:32:41] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=22&rec_content_type=1&name=2 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=248' at line 1
+SELECT * FROM `33hao_good` as `good`  WHERE  =248
+[2015-12-21 13:37:45] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=22&rec_content_type=1&name=2 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=249' at line 1
+SELECT * FROM `33hao_good` as `good`  WHERE  =249
+[2015-12-21 13:37:45] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=22&rec_content_type=1&name=2 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=248' at line 1
+SELECT * FROM `33hao_good` as `good`  WHERE  =248
+[2015-12-21 13:38:23] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=22&rec_content_type=2&name=2 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=249' at line 1
+SELECT * FROM `33hao_good` as `good`  WHERE  =249
+[2015-12-21 13:38:23] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=22&rec_content_type=2&name=2 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=248' at line 1
+SELECT * FROM `33hao_good` as `good`  WHERE  =248
+[2015-12-21 13:38:31] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=22&rec_content_type=2&name=2 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=249' at line 1
+SELECT * FROM `33hao_good` as `good`  WHERE  =249
+[2015-12-21 13:38:31] /33hao/shop/index.php?act=store_promotion_booth&op=adposition_apply&adp_id=22&rec_content_type=2&name=2 ( act=store_promotion_booth&op=adposition_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=248' at line 1
+SELECT * FROM `33hao_good` as `good`  WHERE  =248
+[2015-12-21 18:21:25] /33hao/shop/index.php?act=store_sns&op=store_sns_save&inajax=1 ( act=store_sns&op=store_sns_save ) 
+ERR: Db Error: Unknown column 'strace_mobile_image' in 'field list'
+INSERT  INTO `33hao_store_sns_tracelog` (strace_storeid,strace_storename,strace_storelogo,strace_title,strace_content,strace_mobile_image,strace_mobile_content,strace_time,strace_type,strace_goodsdata) VALUES ('12','宜家','',NULL,'<div class=\"fd-media\">
+									<div class=\"thumb-image\"><a href=\"javascript:void(0);\" nc_type=\"thumb-image\"><img src=\"http://localhost/33hao/data/upload/shop/store/goods/12/12_05040365153632925_240.png\" /><i></i></a></div>
+									<div class=\"origin-image\"><a href=\"javascript:void(0);\" nc_type=\"origin-image\"></a></div>
+								</div>','http://localhost/33hao/data/upload/shop/store/goods/12/12_05040365153632925_240.png',NULL,'1450693285','[{&quot;type&quot;:&quot;image&quot;,&quot;value&quot;:&quot;http://localhost/33hao/data/upload/shop/store/goods/12/12_05040364830824009_1280.png&quot;},{&quot;type&quot;:&quot;text&quot;,&quot;value&quot;:&quot;asdfasdfasdf&quot;}]','')
+[2015-12-21 18:21:53] /33hao/shop/index.php?act=store_sns&op=store_sns_save&inajax=1 ( act=store_sns&op=store_sns_save ) 
+ERR: Db Error: Unknown column 'strace_mobile_image' in 'field list'
+INSERT  INTO `33hao_store_sns_tracelog` (strace_storeid,strace_storename,strace_storelogo,strace_title,strace_content,strace_mobile_image,strace_mobile_content,strace_time,strace_type,strace_goodsdata) VALUES ('12','宜家','',NULL,'<div class=\"fd-media\">
+									<div class=\"thumb-image\"><a href=\"javascript:void(0);\" nc_type=\"thumb-image\"><img src=\"http://localhost/33hao/data/upload/shop/store/goods/12/12_05040365153632925_240.png\" /><i></i></a></div>
+									<div class=\"origin-image\"><a href=\"javascript:void(0);\" nc_type=\"origin-image\"></a></div>
+								</div>','http://localhost/33hao/data/upload/shop/store/goods/12/12_05040365153632925_240.png',NULL,'1450693313','[{&quot;type&quot;:&quot;image&quot;,&quot;value&quot;:&quot;http://localhost/33hao/data/upload/shop/store/goods/12/12_05040364830824009_1280.png&quot;},{&quot;type&quot;:&quot;text&quot;,&quot;value&quot;:&quot;asdfasdfasdf&quot;}]','')
+[2015-12-21 20:35:52] /33hao/mobile/index.php?act=login&op=register&username=18934488948&code=6062&client=android&password=123456&password_confirm=123456 ( act=login&op=register ) 
+ERR: Db Error: Unknown column 'admin' in 'where clause'
+SELECT * FROM `33hao_sms` as `sms`  WHERE username=admin AND type='SMS_GET_REG_CODE' order by create_time desc limit 1

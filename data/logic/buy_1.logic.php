@@ -253,7 +253,7 @@ class buy_1Logic {
     }
 
     /**
-     * 返回需要计算运费的店铺ID组成的数组 和 免运费店铺ID及免运费下限金额描述
+     * 返回铺ID及免运费下限金额描述
      * @param array $store_goods_total 每个店铺的商品金额小计，以店铺ID为下标
      * @return array
      */

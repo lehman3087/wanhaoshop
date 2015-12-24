@@ -47,6 +47,7 @@ define('ATTACH_EDITOR',ATTACH_PATH.'/editor');
 define('ATTACH_MEMBERTAG',ATTACH_PATH.'/membertag');
 define('ATTACH_STORE',ATTACH_PATH.'/store');
 define('ATTACH_GOODS',ATTACH_PATH.'/store/goods');
+//define('', '/data/upload/shop/rec_position/');
 define('ATTACH_STORE_DECORATION',ATTACH_PATH.'/store/decoration');
 define('ATTACH_LOGIN',ATTACH_PATH.'/login');
 define('ATTACH_WAYBILL',ATTACH_PATH.'/waybill');

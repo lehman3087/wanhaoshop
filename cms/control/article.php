@@ -42,6 +42,9 @@ class articleControl extends CMSHomeControl{
 
         Tpl::showpage($template_name);
     }
+    
+
+    
 
     /**
      * 文章列表

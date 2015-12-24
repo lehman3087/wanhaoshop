@@ -360,14 +360,20 @@ $(function (){
     $(self).addClass("current").siblings().removeClass("current");
     //拼接属性
     var curEle = $(".pddc-stock-spec").find("a.current");
+
     var curSpec = [];
     $.each(curEle,function (i,v){
       curSpec.push($(v).attr("specs_value_id"));
     });
     var spec_string = curSpec.sort().join("|");
     //获取商品ID
+    console.log(spec_string);
+    
     var spec_goods_id = myData.spec_list[spec_string];
-    window.location.href = "product_detail.html?goods_id="+spec_goods_id;
+    for(var i in spec_list){
+        console.log(myData.spec_list[spec_string]);
+    }
+    //window.location.href = "product_detail.html?goods_id="+spec_goods_id;
   }
 
   function AddView(){//增加浏览记录

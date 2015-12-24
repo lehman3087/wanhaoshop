@@ -12,18 +12,19 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Applications/MAMP/htdocs/33hao/wap/tmpl/product_detail.html</file>
-            <file>file:/Applications/MAMP/htdocs/33hao/shop/control/store_goods_add.php</file>
-            <file>file:/Applications/MAMP/htdocs/33hao/shop/templates/default/seller/store_sns_add.php</file>
-            <file>file:/Applications/MAMP/htdocs/33hao/shop/control/store_sns.php</file>
-            <file>file:/Applications/MAMP/htdocs/33hao/weimobile/control/goods.php</file>
-            <file>file:/Applications/MAMP/htdocs/33hao/shop/resource/js/leditor.js</file>
-            <file>file:/Applications/MAMP/htdocs/33hao/admin/control/index.php</file>
-            <file>file:/Applications/MAMP/htdocs/33hao/shop/templates/default/seller/decoration_bd_form.php</file>
-            <file>file:/Applications/MAMP/htdocs/33hao/mobile/control/article.php</file>
-            <file>file:/Applications/MAMP/htdocs/33hao/mobile/control/member_applys.php</file>
+            <file>file:/Applications/MAMP/htdocs/33hao/mobile/control/member_address.php</file>
+            <file>file:/Applications/MAMP/htdocs/33hao/admin/templates/default/rec_detail.index.php</file>
+            <file>file:/Applications/MAMP/htdocs/33hao/mobile/control/activity.php</file>
+            <file>file:/Applications/MAMP/htdocs/33hao/mobile/control/member_apply.php</file>
+            <file>file:/Applications/MAMP/htdocs/33hao/admin/control/rec_position.php</file>
+            <file>file:/Applications/MAMP/htdocs/33hao/mobile/control/index.php</file>
+            <file>file:/Applications/MAMP/htdocs/33hao/mobile/control/login.php</file>
+            <file>file:/Applications/MAMP/htdocs/33hao/data/model/activity_member.model.php</file>
+            <file>file:/Applications/MAMP/htdocs/33hao/mobile/control/sns.php</file>
+            <file>file:/Applications/MAMP/htdocs/33hao/mobile/control/goods_class.php</file>
+            <file>file:/Applications/MAMP/htdocs/33hao/mobile/control/member_signup.php</file>
             <file>file:/Applications/MAMP/htdocs/33hao/mobile/control/activity_pub.php</file>
-            <file>file:/Applications/MAMP/htdocs/33hao/shop/resource/js/store_goods_add.step2.js</file>
+            <file>file:/Applications/MAMP/htdocs/33hao/data/log/20151224.log</file>
         </group>
     </open-files>
 </project-private>

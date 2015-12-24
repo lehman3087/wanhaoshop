@@ -123,3 +123,15 @@ SELECT count(*) as count FROM `33hao_activity` as `activity`  WHERE  activity.ac
 [2015-12-24 12:23:30] /33hao/shop/index.php?act=store_sns&op=signup_list ( act=store_sns&op=signup_list ) 
 ERR: Db Error: Unknown column 'activity.acitivity_store_id' in 'where clause'
 SELECT * FROM `33hao_activity` as `activity`  WHERE  activity.acitivity_store_id = '12' order by activity_sort asc limit 0,5
+[2015-12-24 13:37:02] /33hao/mobile/index.php?act=member_applys&op=applyinfo&key=2f55470c1ecaa4fbbc728523822995bb&act_id=6 ( act=member_applys&op=applyinfo ) 
+ERR: Db Error: Unknown column 'act_m_user_id1' in 'where clause'
+SELECT * FROM `33hao_activity_member` WHERE ( act_m_apply_act_id = '6' ) AND ( act_m_user_id1 = '31' ) LIMIT 1  
+[2015-12-24 13:38:47] /33hao/mobile/index.php?act=member_applys&op=applyinfo&key=8fc1e96ce97a0f5654722e84a9fb141f&act_id=6 ( act=member_applys&op=applyinfo ) 
+ERR: Db Error: Unknown column 'act_m_user_id1' in 'where clause'
+SELECT * FROM `33hao_activity_member` WHERE ( act_m_apply_act_id = '6' ) AND ( act_m_user_id1 = '16' ) LIMIT 1  
+[2015-12-24 17:18:22] /33hao/shop/index.php?act=store_sns&op=snsSignupEdit ( act=store_sns&op=snssignupedit ) 
+ERR: Db Error: Unknown column 'activity_store_name' in 'field list'
+UPDATE `33hao_activity` AS `activity` SET activity_title = '元旦大促销，报名优惠更多－商户', activity_type = '', activity_style = '', activity_desc = '', activity_sort = '0', activity_start_date = '1450800000', activity_end_date = '1451404800', activity_state = '0', activity_mb_body = 'a:2:{i:0;a:2:{s:4:\"type\";s:5:\"image\";s:5:\"value\";s:94:\"http://localhost/33hao/data/upload/shop/store/goods/12/12_05042751798128614_1280.png\";}i:1;a:2:{s:4:\"type\";s:4:\"text\";s:5:\"value\";s:6:\"123123\";}}', activity_store_name = '宜家', contact_phone = '18934488948', activity_location = '马家湾'  WHERE  activity_id='24' 
+[2015-12-24 18:48:51] /33hao/admin/index.php?act=activity&op=new ( act=activity&op=new ) 
+ERR: Db Error: Unknown column 'acitivity_store_name' in 'field list'
+INSERT INTO `33hao_activity` (`activity_title`,`activity_type`,`activity_banner`,`activity_style`,`activity_desc`,`activity_sort`,`activity_start_date`,`activity_end_date`,`activity_state`,`activity_mb_body`,`activity_verify`,`acitivity_store_name`) VALUES('asdfasdf','1','05042981311421153.jpg','default_style','','0','1450800000','1450972800','1','a:1:{i:0;a:2:{s:4:\"type\";s:5:\"image\";s:5:\"value\";s:80:\"http://localhost/33hao/data/upload/shop/store/goods/0/05042149888144492_1280.jpg\";}}','1','平台')

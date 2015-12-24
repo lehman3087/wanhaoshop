@@ -12,15 +12,14 @@
 
 defined('InShopNC') or exit('Access Invalid!');
 
-class member_applysControl extends mobileMemberControl {
+class member_applyControl extends mobileMemberControl {
 
 	public function __construct() {
-            
+                
 		parent::__construct();
 	}
         
         public function applyinfoOp() {
-            
             $condition['act_m_apply_act_id']=$_REQUEST['act_id'];
             $condition['act_m_user_id']=$this->member_info['member_id'];
             
@@ -44,10 +43,12 @@ class member_applysControl extends mobileMemberControl {
         }
         
         public function applyOp() {
+           
             $data['act_m_apply_act_id']=$_REQUEST['act_id'];
             $data['act_m_user_id']=$this->member_info['member_id'];
             $data['act_m_apply_time']=time();
-            $joininfo=$this->table('activity_member')->insert($data);
+            
+            $joininfo=Model('activity_member')->insert($data);
             if($joininfo){
                 output_suc('10200');
             }else{

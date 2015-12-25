@@ -146,7 +146,7 @@ class rec_positionControl extends SystemControl{
                 }else if($apply['item_cate']=='store_sns_tracelog'){
                     $array['body']['imageurl'] 	= $apply['rec_img'];
                     $array['body']['requesturl'] =  SNS_R_PATH.$apply['item_id'];
-                    $array['body']['contenttype'] =  'sns_article’';
+                    $array['body']['contenttype'] =  'sns’';
                     $array['body']['targetid'] 	=  $apply['item_id'];
                 }else if($apply['item_cate']=='p_xianshi'){
                     $array['body']['imageurl'] 	= $apply['rec_img'];
@@ -164,7 +164,7 @@ class rec_positionControl extends SystemControl{
                     $condition['groupbuy_id']=$apply['item_id'];
                     $groupbuyinfo=Model('groupbuy')->getGroupbuyInfo($condition);
                     $array['body']['imageurl'] 	= $apply['rec_img'];
-                    $array['body']['contenttype'] =  'groupbuy’';
+                    $array['body']['contenttype'] =  'groupbuy';
                     $array['body']['targetid'] 	=  $apply['item_id']; 
                     $array['body']['requesturl'] =  GOODS_R_PATH.$groupbuyinfo['goods_id'];
                 }
@@ -559,7 +559,7 @@ class rec_positionControl extends SystemControl{
 						//$array['width']				= is_numeric($_POST['rwidth']) ? $_POST['rwidth'] : '';
 						//$array['height']			= is_numeric($_POST['rheight']) ? $_POST['rheight'] : '';
 						$array['body']['cat_id']			= $_REQUEST['article_class'];
-                                                
+                                                $array['body']['contenttype'] 	= 'cms_article';
 					}
 					if (empty($array)) showMessage('请上传海报');
 				//}

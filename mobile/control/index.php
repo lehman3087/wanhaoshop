@@ -93,9 +93,9 @@ class indexControl extends mobileHomeControl{
                 'goods_path'=>'/data/upload/shop/store/goods/',//商户商品图像路径
                 'store_sns_news_path'=>'/data/upload/shop/store/goods/',//店铺动态图像路径
                 'booth_path'=>'/data/upload/shop/rec_position/',//展位基础路径
-                'grougbuys_path'=>'/data/upload/shop/groupbuy/',//后跟商户ID 例：/data/upload/shop/groupbuy/1/1_04423393922882448_max.jpg
+                'grougbuy_path'=>'/data/upload/shop/groupbuy/',//后跟商户ID 例：/data/upload/shop/groupbuy/1/1_04423393922882448_max.jpg
                 'pf_activity_path'=>'/data/upload/shop/activity/',//店铺动态图像路径
-                
+                //'groupbuy_path'=>'/data/upload/shop/groupbuy/',//抢购活动海报路径 例：/data/upload/shop/groupbuy/12/12_05043585915065515_mid.jpg
             );
              output_data($global);        
         }

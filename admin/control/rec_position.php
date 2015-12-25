@@ -76,7 +76,9 @@ class rec_positionControl extends SystemControl{
 			$condition_arr['item_name'] = $_GET['searchapplys'];
 		}
 		$condition_arr['order'] = 'rec_applys.adp_apply_state asc,rec_applys.adp_apply_sort asc';
-
+//                Model('rec_position')->where()->find();
+//                Tpl::output('rec_position',)
+                
 		$page	= new Page();
 		$page->setEachNum(10);
 		$page->setStyle('admin');
@@ -166,6 +168,7 @@ class rec_positionControl extends SystemControl{
                     $array['body']['imageurl'] 	= $apply['rec_img'];
                     $array['body']['contenttype'] =  'groupbuy';
                     $array['body']['targetid'] 	=  $apply['item_id']; 
+                    $array['body']['goodsid'] 	=  $groupbuyinfo['goods_id'];
                     $array['body']['requesturl'] =  GOODS_R_PATH.$groupbuyinfo['goods_id'];
                 }
                 

@@ -78,7 +78,7 @@
 <!--              | <a nctype="jscode" rec_id="<?php echo $v['rec_id'];?>" href="javascript:void(0)"><?php echo $lang['rec_ps_code']?></a> | <a target="_blank" href="index.php?act=rec_position&op=rec_view&rec_id=<?php echo $v['rec_id'];?>"><?php echo $lang['rec_ps_view'];?></a>
               -->
                   <?php if($v['rec_content_type']==3){ ?>
-              ｜<a href="index.php?act=rec_position&op=detail&rec_id=<?php echo $v['rec_id'];?>">处理申请</a> 
+              ｜<a href="index.php?act=rec_position&op=detail&rp_type=<?php echo $v['rec_position'];?>&rec_id=<?php echo $v['rec_id'];?>">处理申请</a> 
               <?php } ?>
           </td>
         </tr>

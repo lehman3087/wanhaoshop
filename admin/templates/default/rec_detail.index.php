@@ -95,7 +95,7 @@
 		  </td>
           <td class="w150 align-center">
           	<?php if($v['adp_apply_state']!='1'){?>
-            	<a href="index.php?act=rec_position&op=deal&ap_type=<?php echo $v['rec_position'];?>&adp_apply_id=<?php echo $v['adp_apply_id'];?>&state=1&adpid=<?php echo $v['adp_id'];?>"><?php echo '通过';?></a>
+            	<a href="index.php?act=rec_position&op=deal&ap_type=<?php echo $_GET['rp_type'];?>&adp_apply_id=<?php echo $v['adp_apply_id'];?>&state=1&adpid=<?php echo $v['adp_id'];?>"><?php echo '通过';?></a>
             <?php }?>
             <?php if($v['adp_apply_state']=='0'){?>
             	&nbsp;|&nbsp;

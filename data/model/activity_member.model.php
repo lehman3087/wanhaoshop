@@ -583,15 +583,15 @@ class activity_memberModel extends Model {
 		return $condition_sql;
 	}
 		/**
-	 * 删除会员
+	 * 取消报名
 	 *
 	 * @param int $id 记录ID
 	 * @return array $rs_row 返回数组形式的查询结果
 	 */
-	public function del($id){
-		if (intval($id) > 0){
-			$where = " member_id = '". intval($id) ."'";
-			$result = Db::delete('member',$where);
+	public function del($where){
+		if (intval($where['act_m_apply_act_id']) > 0){
+			$where = " act_m_apply_act_id='".$where['act_m_apply_act_id']."' and  act_m_user_id='". intval($where['act_m_user_id']) ."'";
+			$result = Db::delete('activity_member',$where);
 			return $result;
 		}else {
 			return false;

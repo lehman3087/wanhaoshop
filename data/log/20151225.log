@@ -1,0 +1,6 @@
+[2015-12-25 10:21:52] /33hao/mobile/index.php?act=member_apply&op=cancel_apply&key=e7d03f298311f00b4596e5c5a16f6419&act_id=6 ( act=member_apply&op=cancel_apply ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1and  act_m_user_id='16'' at line 1
+DELETE FROM `33hao_activity_member`  WHERE  act_m_apply_act_id='6' 1and  act_m_user_id='16'
+[2015-12-25 10:34:11] /33hao/mobile/index.php?act=member_apply&op=apply&key=e7d03f298311f00b4596e5c5a16f6419&activity_id=17 ( act=member_apply&op=apply ) 
+ERR: Db Error: Duplicate entry '16-17' for key 'act_m_user_id'
+INSERT  INTO `33hao_activity_member` (act_m_apply_act_id,act_m_user_id,act_m_apply_time) VALUES ('17','16','1451010851')

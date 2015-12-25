@@ -18,7 +18,9 @@ class member_applyControl extends mobileMemberControl {
                 
 		parent::__construct();
 	}
-        
+        /*
+         * 报废
+         */
         public function applyinfoOp() {
             $condition['act_m_apply_act_id']=$_REQUEST['act_id'];
             $condition['act_m_user_id']=$this->member_info['member_id'];
@@ -32,6 +34,10 @@ class member_applyControl extends mobileMemberControl {
             }
         }
         
+        /*
+         * 个人报名活动列表
+         */
+     
         public function apply_listOp() {
             $condition['act_m_user_id']=$this->member_info['member_id'];
             $joinList=Model('activity_member')->getMemberApplyList($condition,'*',$_REQUEST['pageCount'],'act_m_id desc');
@@ -44,12 +50,35 @@ class member_applyControl extends mobileMemberControl {
         
         public function applyOp() {
            
-            $data['act_m_apply_act_id']=$_REQUEST['act_id'];
+            $data['act_m_apply_act_id']=$_REQUEST['activity_id'];
             $data['act_m_user_id']=$this->member_info['member_id'];
             $data['act_m_apply_time']=time();
             
             $joininfo=Model('activity_member')->insert($data);
+            $activity_id=$_REQUEST['activity_id'];
+            
             if($joininfo){
+                $update['activity_partin_count']=array('sign'=>'increase','value'=>1);
+                Model('activity')->update($update,$activity_id);
+                output_suc('10200');
+            }else{
+                output_special_code('10404');
+            }
+        }
+        
+        /*
+         * 取消报名
+         */
+        public function cancel_applyOp() {
+           
+            $where['act_m_apply_act_id']=$_REQUEST['activity_id'];
+            $where['act_m_user_id']=$this->member_info['member_id'];
+            //$data['act_m_apply_time']=time();
+            
+            $cancel=Model('activity_member')->del($where);
+            if($cancel){
+                $update['activity_partin_count']=array('sign'=>'decrease','value'=>1);
+                Model('activity')->update($update,$where['act_m_apply_act_id']);
                 output_suc('10200');
             }else{
                 output_special_code('10404');

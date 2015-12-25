@@ -79,7 +79,6 @@ class indexControl extends mobileHomeControl{
 //             $activity	= Model('activity');
 //             $act_condition['opening']=true;
 //             $act_list= $activity->getJoinList($act_condition,$page);
-            
              //
             $global=array(
                 'snsTracePath'=>'/shop/index.php?act=store_snshome&op=mobileStraceinfo&st_id=',

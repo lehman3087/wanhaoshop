@@ -106,7 +106,7 @@ z-index: 1;
           <?php if (empty($output['sn_info']['sn_head'])) {?>
           <i class="icon-picture"></i>
           <?php } else {?>
-          <img nctype="file" src="<?php echo ATTACH_STORE.DS.$_SESSION['store_id'].DS.ATTACH_DESIGNER_HEADER.DS.$output['sn_info']['sn_head'];?>" />
+          <img nctype="file" src="<?php echo UPLOAD_SITE_URL.DS.ATTACH_STORE_BARE.DS.$_SESSION['store_id'].DS.ATTACH_DESIGNER_HEADER.DS.$output['sn_info']['sn_head'];?>" />
           <?php }?>
           <input type="hidden" name="image_path[]" nctype="file_<?php echo $i;?>" value="<?php echo $output['sn_info']['sn_head'];?>" /><a href="javascript:void(0)" nctype="del" class="del" title="移除">X</a></div>
         

@@ -137,24 +137,24 @@ z-index: 1;
       <dt>户型</dt>
       <dd>
           <select  class="house_style" name="house_type[]">
-              <?php $der=$_GET['sn_house_type'][0];$o=1; ?>
-             <?php for($o; $o<4; $o++) { ?>
+              <?php  //$der=$_GET['sn_house_type'][0];$o=1; ?>
+             <?php for($o=1; $o<4; $o++) { ?>
                 
-              <option <?php if($der==$work['sn_house_type'][0]) echo "selected"; ?> value="<?php echo $o; ?>"><?php echo $o; ?>房 </option>
+              <option <?php if($o==$output['sn_info']['sn_house_type'][0]) echo "selected"; ?> value="<?php echo $o; ?>"><?php echo $o; ?>房 </option>
              <?php  }?> 
           </select>
           <select  class="house_style" name="house_type[]">
-              <?php $der=$_GET['sn_house_type'][1]; ?>
+              <?php //$der=$_GET['sn_house_type'][1]; ?>
              <?php for($i=1; $i<5; $i++) { ?>
                 
-              <option <?php if($der==$work['sn_house_type'][1]) echo "selected"; ?> value="<?php echo $i; ?>"><?php echo $i; ?>厅 </option>
+              <option <?php if($i==$output['sn_info']['sn_house_type'][1]) echo "selected"; ?> value="<?php echo $i; ?>"><?php echo $i; ?>厅 </option>
                  <?php  }?> 
           </select>
           <select  class="house_style" name="house_type[]">
-              <?php $der=$_GET['sn_house_type'][2]; ?>
+              <?php //$der=$_GET['sn_house_type'][2]; ?>
             <?php for($q=1; $q<5; $q++) { ?>
                 
-              <option <?php if($der==$work['sn_house_type'][2]) echo "selected"; ?> value="<?php echo $q; ?>"><?php echo $q; ?>卫 </option>
+              <option <?php if($q==$output['sn_info']['sn_house_type'][2]) echo "selected"; ?> value="<?php echo $q; ?>"><?php echo $q; ?>卫 </option>
                  <?php  }?> 
           </select>
           

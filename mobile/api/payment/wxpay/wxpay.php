@@ -49,7 +49,8 @@ class wxpay{
         $this->secret = $this->payment['payment_config']['wxpay_appsecret'];
         $this->key = $this->payment['payment_config']['wxpay_appsecret'];
         $this->redirect_uri = 'http://'.$_SERVER['SERVER_NAME'].$this->redirect_uri;
-        $this->notify_url = 'http://'.$_SERVER['SERVER_NAME'].'/mobile/api/payment/wxpay/notify_url.php';
+        //$this->notify_url = 'http://'.$_SERVER['SERVER_NAME'].'/mobile/api/payment/wxpay/notify_url.php';
+        $this->notify_url = 'http://'.$_SERVER['SERVER_NAME'].'/mobile/index.php?act=payment&op=return';
         $this->sslcert_path = dirname(__FILE__).DIRECTORY_SEPARATOR.'cert'.DIRECTORY_SEPARATOR.'apiclient_cert.pem';
         //var_dump($this->sslcert_path);
        // var_dump('11111');

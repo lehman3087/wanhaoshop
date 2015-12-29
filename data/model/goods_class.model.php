@@ -426,6 +426,7 @@ class goods_classModel extends Model
         // 不存在时更新或者强制更新时执行
         if ($update_all == 1 || !($gc_list = rkcache('all_categories'))) {
             $class_list = $this->getGoodsClassListAll2();
+            
             $gc_list = array();
             $class1_deep = array();//第1级关联第3级数组
             $class2_ids = array();//第2级关联第1级ID数组
@@ -447,59 +448,65 @@ class goods_classModel extends Model
                         $class1_deep[$parent_id][$sort][] = $value;
                     }
                 }
+//                var_dump($gc_list);
+//                exit(0);
+//                
 
-                $type_brands = $this->get_type_brands($type_ids);//类型关联品牌
-                foreach ($gc_list as $key => $value) {
-                    $gc_id = $value['gc_id'];
-                    $pic_name = BASE_UPLOAD_PATH.'/'.ATTACH_COMMON.'/category-pic-'.$gc_id.'.jpg';
-                    if (file_exists($pic_name)) {
-                        $gc_list[$gc_id]['pic'] = UPLOAD_SITE_URL.'/'.ATTACH_COMMON.'/category-pic-'.$gc_id.'.jpg';
-                    }
-                    $class3s = $class1_deep[$gc_id];
-
-                    if (is_array($class3s) && !empty($class3s)) {//取关联的第3级
-                        $class3_n = 0;//已经找到的第3级分类个数
-                        ksort($class3s);//排序取到分类
-                        foreach ($class3s as $k3 => $v3) {
-                            if ($class3_n >= 5) {//最多取5个
-                                break;
-                            }
-                            foreach ($v3 as $k => $v) {
-                                if ($class3_n >= 5) {
-                                    break;
-                                }
-                                if (is_array($v) && !empty($v)) {
-                                    $p_id = $v['gc_parent_id'];
-                                    $gc_id = $v['gc_id'];
-                                    $parent_id = $class2_ids[$p_id];//取第1级ID
-                                    $gc_list[$parent_id]['children'][$gc_id] = $v;
-                                    $class3_n += 1;
-                                }
-                            }
-                        }
-                    }
-                    $class2s = $value['children'];
-                   // 
-                    if (is_array($class2s) && !empty($class2s)) {//第2级关联品牌
-                        
-                        foreach ($class2s as $k2 => $v2) {
-                            $p_id = $v2['gc_parent_id'];
-                            $gc_id = $v2['gc_id'];
-                            $type_id = $v2['type_id'];
-                            
-                           // $gc_list[$p_id]['children'][$gc_id]['brands'] = $type_brands[$type_id];
-                          
-                             $pic_name = BASE_UPLOAD_PATH.'/'.ATTACH_COMMON.'/category-pic-'.$gc_id.'.jpg';
-                             //exit($pic_name);
-                            if (file_exists($pic_name)) {
-                               
-                                 $gc_list[$p_id]['children'][$gc_id]['pic'] = UPLOAD_SITE_URL.'/'.ATTACH_COMMON.'/category-pic-'.$gc_id.'.jpg';
-                             }
-                    
-                        }
-                    }
-                }
+//                $type_brands = $this->get_type_brands($type_ids);//类型关联品牌
+//                foreach ($gc_list as $key => $value) {
+//                    $gc_id = $value['gc_id'];
+//                    $pic_name = BASE_UPLOAD_PATH.'/'.ATTACH_COMMON.'/category-pic-'.$gc_id.'.jpg';
+//                    if (file_exists($pic_name)) {
+//                        $gc_list[$gc_id]['pic'] = UPLOAD_SITE_URL.'/'.ATTACH_COMMON.'/category-pic-'.$gc_id.'.jpg';
+//                    }
+//                    $class3s = $class1_deep[$gc_id];
+//
+//                    if (is_array($class3s) && !empty($class3s)) {//取关联的第3级
+//                        $class3_n = 0;//已经找到的第3级分类个数
+//                        ksort($class3s);//排序取到分类
+//                        foreach ($class3s as $k3 => $v3) {
+//                            if ($class3_n >= 5) {//最多取5个
+//                                break;
+//                            }
+//                            foreach ($v3 as $k => $v) {
+//                                if ($class3_n >= 5) {
+//                                    break;
+//                                }
+//                                if (is_array($v) && !empty($v)) {
+//                                    $p_id = $v['gc_parent_id'];
+//                                    $gc_id = $v['gc_id'];
+//                                    $parent_id = $class2_ids[$p_id];//取第1级ID
+//                                    $gc_list[$parent_id]['children'][$gc_id] = $v;
+//                                    $class3_n += 1;
+//                                }
+//                            }
+//                        }
+//                    }
+//                    $class2s = $value['children'];
+//                   // 
+//                    if (is_array($class2s) && !empty($class2s)) {//第2级关联品牌
+//                        
+//                        foreach ($class2s as $k2 => $v2) {
+//                            $p_id = $v2['gc_parent_id'];
+//                            $gc_id = $v2['gc_id'];
+//                            $type_id = $v2['type_id'];
+//                            
+//                           // $gc_list[$p_id]['children'][$gc_id]['brands'] = $type_brands[$type_id];
+//                          
+//                             $pic_name = BASE_UPLOAD_PATH.'/'.ATTACH_COMMON.'/category-pic-'.$gc_id.'.jpg';
+//                             //exit($pic_name);
+//                            if (file_exists($pic_name)) {
+//                               
+//                                 $gc_list[$p_id]['children'][$gc_id]['pic'] = UPLOAD_SITE_URL.'/'.ATTACH_COMMON.'/category-pic-'.$gc_id.'.jpg';
+//                             }
+//                    
+//                        }
+//                    }
+//                }
             }
+            
+       
+
             foreach ($gc_list as $key=>$val) {
                 foreach ($val['children'] as $key2 => $value2) {
                     

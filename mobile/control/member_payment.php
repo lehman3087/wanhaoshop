@@ -100,7 +100,7 @@ class member_paymentControl extends mobileMemberControl {
         
       //  var_dump($mb_payment_info);
         if(!$mb_payment_info) {
-            output_error('123');
+            output_error('10400');
         }
        
         //重新计算所需支付金额

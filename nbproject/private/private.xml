@@ -12,14 +12,23 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Applications/MAMP/htdocs/33hao/mobile/control/index.php</file>
+            <file>file:/Applications/MAMP/htdocs/33hao/shop/templates/default/seller/designer_work.form.php</file>
             <file>file:/Applications/MAMP/htdocs/33hao/data/log/20151225.log</file>
-            <file>file:/Applications/MAMP/htdocs/33hao/mobile/api/payment/wxpay/notify_url.php</file>
-            <file>file:/Applications/MAMP/htdocs/33hao/admin/control/decoration.php</file>
-            <file>file:/Applications/MAMP/htdocs/33hao/mobile/api/payment/wxpay/redirect_uri.php</file>
-            <file>file:/Applications/MAMP/htdocs/33hao/mobile/api/payment/wxpay/wxpay.php</file>
-            <file>file:/Applications/MAMP/htdocs/33hao/mobile/api/payment/alipay/call_back_url.php</file>
+            <file>file:/Applications/MAMP/htdocs/33hao/admin/templates/default/activity_detail.index.php</file>
+            <file>file:/Applications/MAMP/htdocs/33hao/admin/templates/default/decoration.works.index.php</file>
+            <file>file:/Applications/MAMP/htdocs/33hao/admin/templates/default/rec_detail.index.php</file>
+            <file>file:/Applications/MAMP/htdocs/33hao/admin/templates/default/activity.verify.php</file>
+            <file>file:/Applications/MAMP/htdocs/33hao/shop/control/designer_work.php</file>
+            <file>file:/Applications/MAMP/htdocs/33hao/admin/templates/default/rec_position.index.php</file>
+            <file>file:/Applications/MAMP/htdocs/33hao/core/framework/function/decoration.php</file>
+            <file>file:/Applications/MAMP/htdocs/33hao/mobile/control/activity.php</file>
+            <file>file:/Applications/MAMP/htdocs/33hao/mobile/control/article.php</file>
             <file>file:/Applications/MAMP/htdocs/33hao/admin/control/rec_position.php</file>
+            <file>file:/Applications/MAMP/htdocs/33hao/admin/control/activity.php</file>
+            <file>file:/Applications/MAMP/htdocs/33hao/mobile/control/login.php</file>
+            <file>file:/Applications/MAMP/htdocs/33hao/core/framework/function/core.php</file>
+            <file>file:/Applications/MAMP/htdocs/33hao/shop/control/designer.php</file>
+            <file>file:/Applications/MAMP/htdocs/33hao/admin/control/decoration.php</file>
             <file>file:/Applications/MAMP/htdocs/33hao/data/log/20151224.log</file>
         </group>
     </open-files>

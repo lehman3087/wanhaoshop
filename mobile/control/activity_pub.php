@@ -227,7 +227,8 @@ class activity_pubControl extends mobileHomeControl {
 
             
             $goods_list = $model_goods->getGoodsListByColorDistinct($condition, $fieldstr, $order, $_REQUEST['pageCount']);
-        //}
+           // var_dump($goods_list);
+//}
        // 
         $page_count = $model_goods->gettotalpage();
 

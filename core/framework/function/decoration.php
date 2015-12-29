@@ -8,6 +8,28 @@
  */
 
 defined('InShopNC') or exit('Access Invalid!');
+
+function d_header_thumb($work, $type = '',$user_id=''){
+    $search_array = explode(',', GOODS_IMAGES_EXT);
+    
+  //  $file = str_ireplace($search_array,'',$work['sn_work_pic']);
+   // ATTACH_STORE_BARE.DS.$_SESSION['store_id'].DS.ATTACH_DESIGNER_HEADER.DS.$img_path;
+    $fname = basename($work);
+
+   
+    if (preg_match('/^(\d+_)/',$fname)){
+        $user_id = substr($fname,0,strpos($fname,'_'));
+    }else{
+            $user_id = $user_id;
+    }
+//    return BASE_UPLOAD_PATH.'/'.ATTACH_DWORK.'/'.$user_id.'/'.$file;
+//    exit();<?php echo UPLOAD_SITE_URL.DS.ATTACH_STORE_BARE.DS.$_SESSION['store_id'].DS.ATTACH_DESIGNER_HEADER.DS.$output['sn_info']['sn_head'];
+       
+    $file = $type == '' ? $file : str_ireplace('.', '_' . $type . '.', $file);
+    $thumb_host = UPLOAD_SITE_URL.DS.ATTACH_STORE_BARE.DS.$user_id.DS.ATTACH_DESIGNER_HEADER.DS.$work;
+   // $thumb_host = UPLOAD_SITE_URL.'/'.ATTACH_MALBUM;
+    return $thumb_host;
+}
 /**
  *  获得装修需求缩略图
  * @param type $work
@@ -24,11 +46,7 @@ function wthumb($work, $type = '',$user_id){
         return UPLOAD_SITE_URL.'/'.defaultGoodsImage($type);
     }
     
-   
 
-
-    
-    
     $search_array = explode(',', GOODS_IMAGES_EXT);
     
     $file = str_ireplace($search_array,'',$work);
@@ -222,7 +240,7 @@ function wdcthumb($file, $type = '',$store_id){
 //        $user_id = $work['sn_store_id'];
 //    }
 ////    return BASE_UPLOAD_PATH.'/'.ATTACH_DWORK.'/'.$user_id.'/'.$file;
-////    exit();
+////    exit();ATTACH_WORK
 //       
 //    $file = $type == '' ? $file : str_ireplace('.', '_' . $type . '.', $file);
     if (!file_exists(BASE_UPLOAD_PATH.'/'.ATTACH_DWORK.'/'.$store_id.'/'.$file)){
@@ -233,6 +251,50 @@ function wdcthumb($file, $type = '',$store_id){
     return $thumb_host.'/'.$store_id.'/'.$file;
 
 }
+
+
+function wcthumb($file, $type = '',$store_id){
+//    $type_array = explode(',_', ltrim(GOODS_IMAGES_EXT, '_'));
+//    if (!in_array($type, $type_array)) {
+//        $type = '240';
+//    }
+
+    if (empty($file)){
+        return UPLOAD_SITE_URL.'/'.defaultGoodsImage($type);
+    }
+    
+    
+
+//    if (empty($work['sn_work_pic'])) {
+//        return UPLOAD_SITE_URL.'/'.defaultGoodsImage($type);
+//    }
+//    
+ //  exit('1');
+    //$search_array = explode(',', GOODS_IMAGES_EXT);
+    
+   // $file = str_ireplace($search_array,'',$work['sn_work_pic']);
+    
+//    $fname = basename($file);
+//
+//   
+//    if (preg_match('/^(\d+_)/',$fname)){
+//        $user_id = substr($fname,0,strpos($fname,'_'));
+//    }else{
+//        $user_id = $work['sn_store_id'];
+//    }
+////    return BASE_UPLOAD_PATH.'/'.ATTACH_DWORK.'/'.$user_id.'/'.$file;
+////    exit();
+//       
+//    $file = $type == '' ? $file : str_ireplace('.', '_' . $type . '.', $file);
+    if (!file_exists(BASE_UPLOAD_PATH.'/'.ATTACH_WORK.'/'.$file)){
+       // exit('1');
+        return UPLOAD_SITE_URL.'/'.defaultGoodsImage($type);
+    }
+    $thumb_host = UPLOAD_SITE_URL.'/'.ATTACH_WORK;
+    return $thumb_host.'/'.$file;
+
+}
+
 
 
 function get_work_designer($param) {

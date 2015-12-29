@@ -10,6 +10,7 @@
 defined('InShopNC') or exit('Access Invalid!');
 class designer_workControl extends BaseSellerControl {
     public function __construct() {
+        error_reporting(0);
         parent::__construct();
     }
 
@@ -73,7 +74,8 @@ class designer_workControl extends BaseSellerControl {
         if(empty($sn_info) || intval($sn_info['sn_store_id']) !== intval($_SESSION['store_id'])) {
            showMessage(L('wrong_argument'), urlShop('designer_work', 'designer_work_list'), '', 'error');
         }
-        
+        $sn_info['sn_house_type'] =  str_split($sn_info['sn_house_type']);
+       // var_dump($sn_info);
         Tpl::output('sn_info', $sn_info);
         $this->profile_menu('designer_wrok_edit');
         Tpl::showpage('designer_work.form');

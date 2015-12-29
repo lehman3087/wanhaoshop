@@ -76,18 +76,18 @@
           <td><input type="checkbox" name="id[]" value="<?php echo $v['sn_store_id'];?>" class="checkitem"></td>
           <td><i class="icon-plus-sign" style="cursor: pointer;" nctype="ajaxWorkList" data-comminid="<?php echo $v['id'];?>" title="点击展开查看此需求详情；值过多时请横向拖动区域内的滚动条进行浏览。"></i></td>
           <td class="align-center"><?php echo get_decoration_company($v['sn_store_id']);?></td>
-          <td class="w60 picture"><div class="size-56x56"><span class="thumb size-56x56"><i></i><img src="<?php echo wthumb($v, 60);?>" onload="javascript:DrawImage(this,56,56);"/></span></div></td>
+          <td class="w60 picture"><div class="size-56x56"><span class="thumb size-56x56"><i></i><img src="<?php echo d_header_thumb($v['sn_head'], 60,$_SESSION['store_id']);?>" onload="javascript:DrawImage(this,56,56);"/></span></div></td>
           <td>
           <dl class="goods-info"><dt class="goods-name"><?php echo $v['sn_name'];?></dt>
 
             <dd class="goods-store">设计师：<?php echo get_work_designer($v['sn_designer_id']);?></dd></dl>
             </td>
           <td>
-            <p><?php echo $output['category'][$v['sn_category']];?></p>
+            <p><?php echo $v['sn_category'];?></p>
             </td>
           <td class="align-center"><?php echo $v['sn_area']?></td>
-          <td class="align-center"><?php echo $output['style'][$v['sn_style']];?></td>
-          <td class="align-center"><?php echo $output['state'][$v['sn_state']];?></td>
+          <td class="align-center"><?php echo $v['sn_style'];?></td>
+<!--          <td class="align-center"><?php echo $output['state'][$v['sn_state']];?></td>-->
           <?php $arr=str_split($v['sn_house_type']);?>
           <td class="align-center"><?php echo $arr[0].'室'.$arr[1].'厅'.$arr[2].'卫';?></td>
           
@@ -99,7 +99,7 @@
                                 <?php $parray=  explode(',', $v['sn_work_pic']); ?>
                                 <?php foreach ($parray as $key => $value) { ?>
                                 <li><div class="goods-thumb" title="商家货号：">
-                                        <img src="<?php echo wdcthumb($value,60,$v['sn_store_id']); ?>">
+                                        <img width="60px" height="60px" src="<?php echo wcthumb($value,60,$v['sn_store_id']); ?>">
                                     </div>
                                 </li>
                                 <?php } ?>

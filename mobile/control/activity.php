@@ -35,7 +35,7 @@ class activityControl extends mobileMemberControl {
 			//showMessage(Language::get('para_error'),'index.php','html','error');//'缺少参数:活动编号'
 		}
 		$activity	= Model('activity')->getOneById($activity_id);
-		if(empty($activity) || $activity['activity_type'] != '1' || $activity['activity_state'] != 1 || $activity['activity_start_date']>time() || $activity['activity_end_date']<time()){
+		if(empty($activity)|| $activity['activity_state'] != 1 || $activity['activity_start_date']>time() || $activity['activity_end_date']<time()){
 			 output_special_code('10404');
                         //showMessage(Language::get('activity_index_activity_not_exists'),'index.php','html','error');//'指定活动并不存在'
 		}

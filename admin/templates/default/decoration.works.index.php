@@ -103,11 +103,11 @@
         <tr style="display:none;">
                     <td colspan="20"><div class="ncsc-goods-sku ps-container">
                             <ul class="ncsc-goods-sku-list">
-                                <?php $parray=  explode(',', $v['dw_m_pic']); ?>
+                                <?php $parray=  explode(',', $v['dw_file_paths']); ?>
                               
                                 <?php foreach ($parray as $key => $value) { ?>
                                 <li><div class="goods-thumb" title="商家货号：">
-                                        <img src="<?php echo wthumb($value,60,$v['dw_user_id']); ?>">
+                                        <img width="60px" height="60px" src="<?php echo reqthumb($value,60,$v['dw_user_id']); ?>">
                                     </div>
                                 </li>
                                 <?php } ?>

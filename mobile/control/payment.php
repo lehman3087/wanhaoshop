@@ -19,7 +19,7 @@ class paymentControl extends mobileHomeControl{
 	public function __construct() {
 		parent::__construct();
 
-        $this->payment_code = $_GET['payment_code'];
+            $this->payment_code = $_GET['payment_code'];
 	}
 
     public function returnopenidOp(){
@@ -69,6 +69,7 @@ class paymentControl extends mobileHomeControl{
      * 支付回调
      */
     public function returnOp() {
+        
         unset($_GET['act']);
         unset($_GET['op']);
         unset($_GET['payment_code']);

@@ -75,7 +75,7 @@ class indexControl extends mobileHomeControl{
 //                $rec_list[$key]['adp']=$applys;
 //            }
 //            
-//             //平台活动
+//             //平台活动  
 //             $activity	= Model('activity');
 //             $act_condition['opening']=true;
 //             $act_list= $activity->getJoinList($act_condition,$page);
@@ -87,10 +87,11 @@ class indexControl extends mobileHomeControl{
                 'category'=>$category,
                 'style'=>$style,
                 'decoration_work_path'=>'/shop/store/work/',//案例图片地址
+                'decoration_head'=>'/shop/store/work/',//案例图片地址
                 'decoration_request_path'=>'/shop/member/request/',//后跟会员ID
                 'rec_list'=>$rec_list,//广告位
                 'act_list'=>$act_list,
-                'goods_path'=>'/data/upload/shop/store/goods/',//商户商品图像路径
+                'goods_path'=>'/data/upload/shop/store/goods/',// 后跟商户ID 商户商品图像路径 
                 'store_sns_news_path'=>'/data/upload/shop/store/goods/',//店铺动态图像路径
                 'booth_path'=>'/data/upload/shop/rec_position/',//展位基础路径
                 'grougbuy_path'=>'/data/upload/shop/groupbuy/',//后跟商户ID 例：/data/upload/shop/groupbuy/1/1_04423393922882448_max.jpg
@@ -99,7 +100,29 @@ class indexControl extends mobileHomeControl{
             );
              output_data($global);        
         }
-
+        /*
+         * 推荐品牌
+         */
+        public function brandrOp($param) {
+         $model = Model();
+        $brand_r_list = Model('brand')->getBrandPassedList(array('brand_recommend'=>1) ,'brand_id,brand_name,brand_pic', 0, 'brand_sort asc, brand_id desc', 5);
+       // $brands = $this->_tidyBrand($brand_c_list);
+        $fieldstr = "goods_id,goods_commonid,goods_name,goods_jingle,store_id,store_name,goods_price,goods_promotion_price,goods_promotion_type,goods_marketprice,goods_storage,goods_image,goods_freight,goods_salenum,color_id,evaluation_good_star,evaluation_count,is_virtual,is_fcode,is_appoint,is_presell,have_gift";
+        // 条件
+        $where = array();
+        
+        
+       foreach ($brand_r_list as $key => $value) {
+           // 字段
+        $where['brand_id'] = $value['brand_id'];
+        $model_goods = Model('goods');
+        $goods_list = $model_goods->getGoodsListByColorDistinct($where, $fieldstr, $order, 10);
+        $brand_r_list[$key]['goods_list']=$goods_list;
+       }
+       
+       output_data($brand_r_list);
+        
+        }
     /**
      * 专题
      */

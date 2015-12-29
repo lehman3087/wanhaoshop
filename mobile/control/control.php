@@ -13,12 +13,12 @@ defined('InShopNC') or exit('Access Invalid!');
 /********************************** 前台control父类 **********************************************/
 
 class mobileControl{
+    
 
     //客户端类型
     protected $client_type_array = array('android', 'wap', 'wechat', 'ios');
     //列表默认分页数
     protected $page = 5;
-    
     
     protected function read_json() {
         ob_start();
@@ -76,9 +76,9 @@ class mobileControl{
 	public function __construct() {
             
         Language::read('mobile');
-        
+        $this->request_json();
         //分页数处理
-        $page = intval($_GET['page']);
+        $page = intval($_REQUEST['pageCount']);
         if($page > 0) {
             $this->page = $page;
         }

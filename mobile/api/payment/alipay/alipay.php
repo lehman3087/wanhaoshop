@@ -66,10 +66,10 @@ class alipay {
             	$this->format	= 'xml';
 		$this->v		= '2.0';
 		$this->req_id	= date('Ymdhis');
-		//$this->notify_url		= MOBILE_SITE_URL.'/api/payment/alipay/notify_url.php';
-                $this->notify_url = 'http://'.$_SERVER['SERVER_NAME'].'/mobile/index.php?act=payment&op=notify&payment_code=alipay';
-		//$this->call_back_url	= MOBILE_SITE_URL.'/api/payment/alipay/call_back_url.php';
-                $this->call_back_url = 'http://'.$_SERVER['SERVER_NAME'].'/mobile/index.php?act=payment&op=return&payment_code=alipay';
+		$this->notify_url		= MOBILE_SITE_URL.'/api/payment/alipay/notify_url.php';
+                //$this->notify_url = 'http://'.$_SERVER['SERVER_NAME'].'/mobile/index.php?act=payment&op=notify&payment_code=alipay';
+		$this->call_back_url	= MOBILE_SITE_URL.'/api/payment/alipay/call_back_url.php';
+                //$this->call_back_url = 'http://'.$_SERVER['SERVER_NAME'].'/mobile/index.php?act=payment&op=return&payment_code=alipay';
 		$this->seller_email		= $param['alipay_account'];
 		//v3-b11
 		$this->out_trade_no		= $param['order_sn'].'-'.$param['order_type'];

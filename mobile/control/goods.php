@@ -21,6 +21,7 @@ class goodsControl extends mobileHomeControl{
     }
     
 
+
     /**
      * 商品列表
      */
@@ -52,19 +53,19 @@ class goodsControl extends mobileHomeControl{
         $order = $this->_goods_list_order($_REQUEST['sortType'], $_REQUEST['sortOrder']);
         
         //优先从全文索引库里查找
-        list($indexer_ids,$indexer_count) = $model_search->indexerSearch($_REQUEST,$this->page);
+        list($indexer_ids,$indexer_count) = $model_search->indexerSearch($_REQUEST,$_REQUEST['pageCount']);
         if (is_array($indexer_ids)) {
             //商品主键搜索
-            $goods_list = $model_goods->getGoodsOnlineList(array('goods_id'=>array('in',$indexer_ids)), $fieldstr, 0, $order, $this->page, null, false);
+            $goods_list = $model_goods->getGoodsOnlineList(array('goods_id'=>array('in',$indexer_ids)), $fieldstr, 0, $order, $_REQUEST['pageCount'], null, false);
             //如果有商品下架等情况，则删除下架商品的搜索索引信息
             if (count($goods_list) != count($indexer_ids)) {
                 $model_search->delInvalidGoods($goods_list, $indexer_ids);
             }
-            pagecmd('setEachNum',$this->page);
+            pagecmd('setEachNum',$_REQUEST['pageCount']);
             pagecmd('setTotalNum',$indexer_count);
         } else {
             
-            $goods_list = $model_goods->getGoodsListByColorDistinct($condition, $fieldstr, $order, $this->page);
+            $goods_list = $model_goods->getGoodsListByColorDistinct($condition, $fieldstr, $order, $_REQUEST['pageCount']);
         }
         $page_count = $model_goods->gettotalpage();
 

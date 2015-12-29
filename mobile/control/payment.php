@@ -137,7 +137,7 @@ class paymentControl extends mobileHomeControl{
     public function notifyOp() {
         // 恢复框架编码的post值
         $result=Db::insert('log', array('key'=>'1','value'=>serialize($_POST)));
-        $result=Db::insert('log', array('key'=>'2','value'=>serialize($_POST)));
+        $result=Db::insert('log', array('key'=>'2','value'=>serialize($_GET)));
         $_POST['notify_data'] = html_entity_decode($_POST['notify_data']);
         $result=Db::insert('log', array('key'=>'3','value'=>serialize($_POST)));
         $payment_api = $this->_get_payment_api();

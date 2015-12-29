@@ -19,9 +19,10 @@
     <table class="tb-type1 noborder search">
       <tbody>
         <tr>
+             
           <th><label for="searchtitle">商户名</label></th>
           <td><input type="text" name="searchstore" id="searchstore" class="txt" value='<?php echo $_GET['searchstore'];?>'></td>
-          <th><label for="searchtitle">活动名</label></th>
+          <th><label for="searchtitle">标题</label></th>
           <td><input type="text" name="searchapplys" id="searchgoods" class="txt" value='<?php echo $_GET['searchgoods'];?>'></td>
           <td><select name="searchstate">
               <option value="0" <?php if (!$_GET['searchstate']){echo 'selected=selected';}?>>审核状态</option>
@@ -45,7 +46,7 @@
       </tr>
       <tr>
         <td><ul>
-            <li><?php echo $lang['activity_detail_index_tip1'];?></li>
+            <li>一个展位只可对应一个申报对象</li>
             <li><?php echo $lang['activity_detail_index_tip2'];?></li>
             <li><?php echo $lang['activity_detail_index_tip3'];?></li>
           </ul></td>
@@ -59,7 +60,9 @@
         <tr class="thead">
           <th></th>
           <th><?php echo $lang['nc_sort'];?></th>
-          <th>活动名</th>
+          <th><label for="searchtitle">海报</label></th>
+          <th>申报对象</th>
+          <th>对象类型</th>
           <th>店铺</th>
           <th class="align-center">状态</th>
           <th class="align-center"><?php echo $lang['nc_handle'];?></th>
@@ -69,9 +72,18 @@
         <?php if(!empty($output['list']) && is_array($output['list'])){ ?>
         <?php foreach($output['list'] as $k => $v){ ?>
         <tr class="hover">
+            
           <td class="w24"><input type="checkbox" name='activity_detail_id[]' value="<?php echo $v['adp_apply_id'];?>" class="checkitem"></td>
           <td class="w48 sort"><span class=" editable" title="<?php echo $lang['nc_editable'];?>" style="cursor:pointer;"  required="1" fieldid="<?php echo $v['adp_apply_id'];?>" ajax_branch='rec_detail_sort' fieldname="adp_apply_sort" nc_type="inline_edit"><?php echo $v['adp_apply_sort'];?></span></td>
+          
+             <td><div class="pic-thumb" >
+                     
+                     <img class="show_image"  src="<?php echo act_thumb($v['rec_img'], 60);?>">
+                     <div class="type-file-preview"><img src="<?php echo act_thumb($v['rec_img'], 360);?>" onload="javascript:DrawImage(this,500,500);"></div>
+                 </div>
+             </td>
           <td><?php echo $v['item_name'];?></td>
+          <td><?php echo str_replace(array('activity','store_sns_tracelog','goods','groupbuy','p_xianshi','p_mansong','p_bundling'), array('报名活动','新闻','商品','抢购','限时折扣','满送','优惠套餐'), $v['item_cate']); ?></td>
           <td><?php echo $v['store_name'];?></td>
           <td class="align-center">
           	<?php switch($v['adp_apply_state']){
@@ -83,7 +95,7 @@
 		  </td>
           <td class="w150 align-center">
           	<?php if($v['adp_apply_state']!='1'){?>
-            	<a href="index.php?act=rec_position&op=deal&adp_apply_id=<?php echo $v['adp_apply_id'];?>&state=1"><?php echo '通过';?></a>
+            	<a href="index.php?act=rec_position&op=deal&ap_type=<?php echo $_GET['rp_type'];?>&adp_apply_id=<?php echo $v['adp_apply_id'];?>&state=1&adpid=<?php echo $v['adp_id'];?>"><?php echo '通过';?></a>
             <?php }?>
             <?php if($v['adp_apply_state']=='0'){?>
             	&nbsp;|&nbsp;

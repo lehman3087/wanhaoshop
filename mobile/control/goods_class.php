@@ -148,7 +148,7 @@ class goods_classControl extends mobileHomeControl{
      * @param   number  $update_all   更新
      * @return  array   数组
      */
-    public function get_all_category($update_all = 0) {
+    public function get_all_categoryOp($update_all = 0) {
 
         // 不存在时更新或者强制更新时执行
         if ($update_all == 1 || !($gc_list = rkcache('all_categories'))) {
@@ -218,8 +218,9 @@ class goods_classControl extends mobileHomeControl{
 
             wkcache('all_categories', $gc_list);
         }
-
-        return $gc_list;
+        
+        output_data(array('all_categories'=>$gc_list));
+      //  return $gc_list;
     }
     
     public function get_all_category2($param) {

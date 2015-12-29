@@ -24,7 +24,7 @@ class mobileControl{
         Language::read('mobile');
 
         //分页数处理
-        $page = intval($_GET['page']);
+        $page = intval($_REQUEST['pageCount']);
         if($page > 0) {
             $this->page = $page;
         }
@@ -42,8 +42,8 @@ class mobileMemberControl extends mobileControl{
     protected $member_info = array();
 
 	public function __construct() {
+        
         parent::__construct();
-
         $model_mb_user_token = Model('mb_user_token');
         $key = $_POST['key'];
         if(empty($key)) {

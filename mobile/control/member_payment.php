@@ -18,7 +18,7 @@ class member_paymentControl extends mobileMemberControl {
 
 	public function __construct() {
 		parent::__construct();
-        $this->payment_code = isset($_REQUEST['payment_code']) && trim($_REQUEST['payment_code']) != '' ? trim($_REQUEST['payment_code']) :'alipay';
+                $this->payment_code = isset($_REQUEST['payment_code']) && trim($_REQUEST['payment_code']) != '' ? trim($_REQUEST['payment_code']) :'alipay';
 	}
 
     /**
@@ -75,12 +75,13 @@ class member_paymentControl extends mobileMemberControl {
         require($inc_file);
         $payment_api = new wxpay();
         
-        $return = $payment_api->getpWpay($pay_sn);
-        $array=array();
-        $array=$payment_api->parameters;
-        $array['api_key']='55f0c2ffb28f1597fa77ad56dc055d0c';
+       $payment_api->getpWpay($pay_sn);
+        //var_dump($return);
+       // $array=array();
+       // $array=$payment_api->parameters;
+       // $array['api_key']='55f0c2ffb28f1597fa77ad56dc055d0c';
         //return $return;
-        output_data($array);
+        //output_data($return);
         
     }
     
@@ -99,7 +100,7 @@ class member_paymentControl extends mobileMemberControl {
         
       //  var_dump($mb_payment_info);
         if(!$mb_payment_info) {
-            output_error('123');
+            output_error('10400');
         }
        
         //重新计算所需支付金额

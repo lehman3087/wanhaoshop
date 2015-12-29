@@ -94,7 +94,6 @@ catch(e){}
           </div>
         </div>
       </div>
-        <?php if($_SESSION['is_dc']==1){ ?> 
       <div class="search-bar">
         <form method="get" target="_blank">
           <input type="hidden" name="act" value="search">
@@ -102,7 +101,6 @@ catch(e){}
           <input type="submit" nctype="search_submit" class="search-input-btn pngFix" value="">
         </form>
       </div>
-        <? } ?>
     </div>
     <nav class="ncsc-nav">
       <dl class="<?php echo $output['current_menu']['model'] == 'index'?'current':'';?>">

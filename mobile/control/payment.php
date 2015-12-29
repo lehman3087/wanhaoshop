@@ -99,13 +99,45 @@ class paymentControl extends mobileHomeControl{
         Tpl::showpage('payment_message');
     }
 
+        /**
+     * 支付提醒
+     */
+    public function notify2Op() {
+        // 恢复框架编码的post值
+        //$_POST['notify_data'] = html_entity_decode($_POST['notify_data']);
+
+        //$payment_api = $this->_get_payment_api();
+
+        //$payment_config = $this->_get_payment_config();
+
+        //$callback_info = $payment_api->getNotifyInfo($payment_config);
+        $result=Db::insert('log', array('key'=>'111','value'=>'12'));
+
+       
+            //验证成功
+//            $result = $this->_update_order($_REQUEST['out_trade_no'], $_REQUEST['trade_no']);
+//            if($result['state']) {
+//                if($this->payment_code == 'wxpay'){
+//                    echo $callback_info['returnXml'];
+//                    die;
+//                }else{
+//                    echo 'success';die;
+//                }
+//
+//            }
+		//}
+
+        //验证失败
+
+    }
+    
     /**
      * 支付提醒
      */
     public function notifyOp() {
         // 恢复框架编码的post值
         $_POST['notify_data'] = html_entity_decode($_POST['notify_data']);
-
+        $result=Db::insert('log', array('key'=>'111','value'=>$_POST['notify_data']));
         $payment_api = $this->_get_payment_api();
 
         $payment_config = $this->_get_payment_config();
@@ -186,6 +218,7 @@ class paymentControl extends mobileHomeControl{
 
         $tmp = explode('|', $out_trade_no);
         $out_trade_no = $tmp[0];
+        
         if (!empty($tmp[1])) {
             $order_type = $tmp[1];
         } else {

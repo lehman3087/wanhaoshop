@@ -66,6 +66,39 @@ class paymentControl extends mobileHomeControl{
         Tpl::showpage('payment_message');
     }
 
+        /**
+     * 支付回调
+     */
+    public function return2Op() {
+        unset($_GET['act']);
+        unset($_GET['op']);
+        unset($_GET['payment_code']);
+
+       // $payment_api = $this->_get_payment_api();
+
+       // $payment_config = $this->_get_payment_config();
+
+        //$callback_info = $payment_api->getReturnInfo($payment_config);
+
+        if($callback_info) {
+            //验证成功
+            $result = $this->_update_order($_REQUEST['out_trade_no'], $_REQUEST['trade_no']);
+            if($result['state']) {
+                Tpl::output('result', 'success');
+                Tpl::output('message', '支付成功');
+            } else {
+                Tpl::output('result', 'fail');
+                Tpl::output('message', '支付失败');
+			}
+        } else {
+			//验证失败
+            Tpl::output('result', 'fail');
+            Tpl::output('message', '支付失败');
+		}
+
+        Tpl::showpage('payment_message');
+    }
+    
     /**
      * 支付提醒
      */

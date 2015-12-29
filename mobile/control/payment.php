@@ -135,6 +135,14 @@ class paymentControl extends mobileHomeControl{
      * 支付提醒
      */
     public function notifyOp() {
+        
+        if($_GET['payment_code'] == 'alipay'){
+                    $this->ali_notice();
+                }else{
+                    echo 'success';die;
+                }
+                
+                
         // 恢复框架编码的post值
         $result=Db::insert('log', array('key'=>'1','value'=>serialize($_POST)));
         $result=Db::insert('log', array('key'=>'2','value'=>serialize($_GET)));
@@ -166,8 +174,42 @@ class paymentControl extends mobileHomeControl{
             echo '<xml><return_code><!--[CDATA[FAIL]]--></return_code></xml>';
             die;
         }else{
+            
+            
             echo "fail";die;
         }
+    }
+    
+    
+    private function ali_notice(){
+        if(!empty($_POST)){             //如果$_POST数据不为空的话
+//        foreach ($_POST as $k => $v) {
+//            file_put_contents('post.txt', $k.'---'.$v.PHP_EOL, FILE_APPEND);
+//        }
+ 
+    if(!empty($_POST['trade_status'])){         //状态值不为空
+        $bill_list_id_date = $_POST['out_trade_no'];        //商户订单号
+        $trade_no = $_POST['trade_no'];                     //支付宝交易号
+        $trade_status = $_POST['trade_status'];             //交易状态
+        $total_fee = $_POST['total_fee'];                   //支付金额
+        //检查该账单是否已支付.....
+ 
+        if($trade_status == 'TRADE_FINISHED' OR $trade_status  == 'TRADE_SUCCESS') {
+            //处理你的业务逻辑......
+            $result = $this->_update_order($bill_list_id_date, $trade_no);
+            if($result['state']) {
+                if($this->payment_code == 'wxpay'){
+                    echo $callback_info['returnXml'];
+                    die;
+                }else{
+                    echo 'success';die;
+                }
+
+            }
+        }
+    }
+}
+
     }
 
     /**

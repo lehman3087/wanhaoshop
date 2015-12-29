@@ -137,13 +137,13 @@ class paymentControl extends mobileHomeControl{
     public function notifyOp() {
         // 恢复框架编码的post值
         $_POST['notify_data'] = html_entity_decode($_POST['notify_data']);
-        $result=Db::insert('log', array('key'=>'111','value'=>$_POST['notify_data']));
+        $result=Db::insert('log', array('key'=>'111','value'=>serialize($_POST['notify_data'])));
         $payment_api = $this->_get_payment_api();
 
         $payment_config = $this->_get_payment_config();
 
         $callback_info = $payment_api->getNotifyInfo($payment_config);
-
+        $result=Db::insert('log', array('key'=>'111','value'=>  serialize($callback_info)));
         if($callback_info) {
             //验证成功
             $result = $this->_update_order($callback_info['out_trade_no'], $callback_info['trade_no']);

@@ -219,7 +219,7 @@ class activityControl extends SystemControl{
 		$input['activity_state']	= intval($_POST['activity_state']);
                 $input['activity_mb_body']	= $_POST['m_body'];
                 $input['activity_verify']	= 1;
-                $input['acitivity_store_name']	= '平台';
+                $input['activity_store_name']	= '平台';
 		$activity	= Model('activity');
 		$result	= $activity->add($input);
 		if($result){
@@ -398,7 +398,7 @@ class activityControl extends SystemControl{
                 $input['activity_state']	= intval($_POST['activity_state']);
                 $input['activity_mb_body']	= $_POST['m_body'];
                 if($input['activity_type']<11){
-                    $input['acitivity_store_name']	= '平台';
+                    $input['activity_store_name']	= '平台';
                 }
                 
                 

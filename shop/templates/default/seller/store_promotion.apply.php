@@ -250,7 +250,7 @@ function ajaxFileUpload(id, o) {
     $('img[nctype="' + id + '"]').attr('src', SHOP_TEMPLATES_URL + "/images/loading.gif");
 
     $.ajaxFileUpload({
-        url : SITEURL + '/index.php?act=store_goods_add&op=image_upload&cat=p',
+        url : SITEURL + '/index.php?act=store_goods_add&op=image_upload&cat=r',
         //url: ADMIN_SITE_URL+'/index.php?act=upload&op=image_upload',
         secureuri : false,
         fileElementId : id,

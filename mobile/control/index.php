@@ -83,7 +83,7 @@ class indexControl extends mobileHomeControl{
             $global=array(
                 'snsTracePath'=>'/shop/index.php?act=store_snshome&op=mobileStraceinfo&st_id=',
                 'decoration_style'=>$styles,
-                'designer_head'=>'',//设计师头像路径
+                'designer_head'=>'/data/upload/store/{}/designer/header/',//设计师头像路径 {}替换成store_id
                 'category'=>$category,
                 'style'=>$style,
                 'decoration_work_path'=>'/shop/store/work/',//案例图片地址
@@ -95,7 +95,8 @@ class indexControl extends mobileHomeControl{
                 'store_sns_news_path'=>'/data/upload/shop/store/goods/',//店铺动态图像路径
                 'booth_path'=>'/data/upload/shop/rec_position/',//展位基础路径
                 'grougbuy_path'=>'/data/upload/shop/groupbuy/',//后跟商户ID 例：/data/upload/shop/groupbuy/1/1_04423393922882448_max.jpg
-                'pf_activity_path'=>'/data/upload/shop/activity/',//店铺动态图像路径
+                'pf_activity_path'=>'/data/upload/shop/activity/',//平台活动图像路径
+                'brand_path'=>'/data/upload/shop/brand/',//品牌图像路径
                 //'groupbuy_path'=>'/data/upload/shop/groupbuy/',//抢购活动海报路径 例：/data/upload/shop/groupbuy/12/12_05043585915065515_mid.jpg
             );
              output_data($global);        

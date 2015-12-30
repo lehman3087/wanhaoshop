@@ -528,6 +528,8 @@ class store_goods_addControl extends BaseSellerControl {
         $upload = new UploadFile();
         if($_REQUEST['cat']=='p'){
             $upload->set('default_dir',ATTACH_ACTIVITY. DS . $upload->getSysSetPath());
+        }else if($_REQUEST['cat']=='r'){
+            $upload->set('default_dir',ATTACH_REC_POSITION. DS . $upload->getSysSetPath());
         }else{
             $upload->set('default_dir', ATTACH_GOODS . DS . $_SESSION ['store_id'] . DS . $upload->getSysSetPath());
         }
@@ -557,6 +559,9 @@ class store_goods_addControl extends BaseSellerControl {
         
         if($_REQUEST['cat']=='p'){
             list($width, $height, $type, $attr) = getimagesize(BASE_UPLOAD_PATH . '/' . ATTACH_ACTIVITY  . DS . $img_path);
+        }else if($_REQUEST['cat']=='r'){
+            list($width, $height, $type, $attr) = getimagesize(BASE_UPLOAD_PATH . '/' . ATTACH_REC_POSITION  . DS . $img_path);
+            //$upload->set('default_dir',ATTACH_REC_POSITION. DS . $upload->getSysSetPath());
         }else{
             list($width, $height, $type, $attr) = getimagesize(BASE_UPLOAD_PATH . '/' . ATTACH_GOODS . '/' . $_SESSION['store_id'] . DS . $img_path);
         }
@@ -578,6 +583,8 @@ class store_goods_addControl extends BaseSellerControl {
        
         if($_REQUEST['cat']=='p'){
           $data ['thumb_name'] = UPLOAD_SITE_URL. '/' . ATTACH_ACTIVITY  . DS . $img_path;  
+        }else if($_REQUEST['cat']=='r'){
+            $data ['thumb_name'] = UPLOAD_SITE_URL. '/' . ATTACH_REC_POSITION  . DS . $img_path;  
         }else{
              $data ['thumb_name'] = cthumb($upload->getSysSetPath() . $upload->thumb_image, 240, $_SESSION['store_id']);
         }

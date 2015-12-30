@@ -1,9 +1,0 @@
-[2015-12-11 10:42:33] /33hao/mobile/index.php?act=member_cart&op=cart_item_list&key=77598ee4362ca380a155a0fb07784594 ( act=member_cart&op=cart_item_list ) 
-ERR: Db Error: Unknown column 'buyer_id' in 'where clause'
-SELECT * FROM `33hao_voucher` WHERE ( buyer_id = '16' ) AND ( voucher_store_id = '12' ) AND ( voucher_end_date > '1449801752' ) AND ( voucher_state = '1' ) LIMIT 1000  
-[2015-12-11 10:42:33] /33hao/mobile/index.php?act=member_cart&op=cart_item_list&key=77598ee4362ca380a155a0fb07784594 ( act=member_cart&op=cart_item_list ) 
-ERR: Db Error: Unknown column 'buyer_id' in 'where clause'
-SELECT * FROM `33hao_voucher` WHERE ( buyer_id = '16' ) AND ( voucher_store_id = '6' ) AND ( voucher_end_date > '1449801752' ) AND ( voucher_state = '1' ) LIMIT 1000  
-[2015-12-11 10:42:33] /33hao/mobile/index.php?act=member_cart&op=cart_item_list&key=77598ee4362ca380a155a0fb07784594 ( act=member_cart&op=cart_item_list ) 
-ERR: Db Error: Unknown column 'buyer_id' in 'where clause'
-SELECT * FROM `33hao_voucher` WHERE ( buyer_id = '16' ) AND ( voucher_store_id = '6' ) AND ( voucher_end_date > '1449801752' ) AND ( voucher_state = '1' ) LIMIT 1000  

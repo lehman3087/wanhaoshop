@@ -170,7 +170,7 @@ class activityModel{
                 $param = array();
                 $param['common_id'] = $val['activity_id'];
                 $param['remark']= $val['activity_verifyremark'];
-                $this->_sendStoreMsg('goods_verify', $val['acitivity_store_id'], $param);
+                $this->_sendStoreMsg('goods_verify', $val['activity_store_id'], $param);
             }
         }
     }

@@ -112,7 +112,7 @@
           <td class="nowrap align-center"><?php echo @date('Y-m-d',$v['activity_start_date']);?></td>
           <td class="align-center"><?php echo @date('Y-m-d',$v['activity_end_date']);?></td>
           <td class="align-center"><?php echo $v['activity_state'] == 1?$lang['activity_openstate_open']:$lang['activity_openstate_close'];?></td>
-          <td class="align-center"><?php echo $v['acitivity_store_name']; ?></td>
+          <td class="align-center"><?php echo $v['activity_store_name']; ?></td>
           <td class="align-center">
           	<a href="index.php?act=activity&op=edit&activity_id=<?php echo $v['activity_id'];?>"><?php echo $lang['nc_edit'];?></a>&nbsp;|&nbsp;
           	<?php if ($v['activity_state'] == 0 || $v['activity_end_date']<time()){?>

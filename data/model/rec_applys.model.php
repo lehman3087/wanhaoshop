@@ -123,30 +123,37 @@ class rec_applysModel{
 	}
         
         public function getExtAcitity($applys) {
+            
             if (!is_array($applys)) {
                 return false;
             }
             
-                
+             
             foreach ($applys as $key => $value) {
                 switch ($value['item_cate']) {
                     case 'p_mansong':
                         $id='mansong_id';
                         $name='mansong_name';
                         $remark='remark';
-                        $this->getExcents($key,$value,$id,$name);
+                        $this->getExcents($applys,$key,$value,$id,$name);
+                        break;
+                    case 'groupbuy':  
+                        $id='groupbuy_id';
+                        $name='groupbuy_name';
+                        $remark='remark';
+                        $this->getExcents($applys,$key,$value,$id,$name);
                         break;
                     case 'p_xianshi':
                         $id='xianshi_id';
                         $name='xianshi_name';
                         $remark='xianshi_explain';
-                        $this->getExcents($key,$value,$id,$name);
+                        $this->getExcents($applys,$key,$value,$id,$name);
                         break;
                     case 'p_bundling':
                         $id='bl_id';
                         $name='bl_name';
                         $remark='';
-                        $this->getExcents($key,$value,$id,$name);
+                        $this->getExcents($applys,$key,$value,$id,$name);
                         break;
                     case 'activity':
                         $id='activity_id';
@@ -154,7 +161,7 @@ class rec_applysModel{
                         $startt='activity_start_date';
                         $endt='activity_end_date';
                         $remark='';
-                        $this->getExcents($key,$value,$id,$name,$startt,$endt);
+                        $this->getExcents($applys,$key,$value,$id,$name,$startt,$endt);
                         break;
                     case 'good':
                         break;
@@ -170,15 +177,18 @@ class rec_applysModel{
             }
             return $applys;
         }
-        private function getExcents($key,$value,$id,$name,$startt='start_time',$endt='end_time'){
+        private function getExcents(&$applys,$key,$value,$id,$name,$startt='start_time',$endt='end_time'){
 
                 $param['table']	= $value['item_cate'];
                 $param['where']	= ' and '.$id.'='.$value['item_id'];
+                
                 $activity=Db::select($param,$page);
+                
                 $applys[$key]['act_name']=$activity[0][$name];
                 $applys[$key]['start_time']=$activity[0][$startt];
                 $applys[$key]['end_time']=$activity[0][$endt];
                 
+               
         }
         
 	/**

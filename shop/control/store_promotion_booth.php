@@ -111,8 +111,6 @@ class store_promotion_boothControl extends BaseSellerControl {
 		$rec_apply_model	= Model('rec_applys');
 		$list	= $rec_apply_model->getActivitiesJoinList(array('adp_id'=>"$adp_id",'store_id'=>"{$_SESSION['store_id']}",'group'=>'adp_apply_state asc'));
 		//构造通过与审核中商品的编号数组,以便在下方待选列表中,不显示这些内容
-//                    var_dump($list);
-//                    exit();
                 
 		$item_ids	= array();
 		if(is_array($list) and !empty($list)){

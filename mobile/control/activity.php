@@ -97,16 +97,13 @@ class activityControl extends mobileMemberControl {
     
         
         public function youhuisOp(){
-                        
                         $bl=Model('p_bundling')->getBundlingOpenList($condition5);
                         $activities['bundlings']=$bl;
                         $xs=Model('p_xianshi')->getXianshiList($condition3);
                          $activities['xianshis']=$xs;
                         $gb=Model('groupbuy')->getGroupbuyAvailableList($condition4); 
                         $activities['groupbuys']=$gb;
-                        
                         output_data($activities);
-                
 	}
         
 

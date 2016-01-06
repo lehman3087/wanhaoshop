@@ -86,9 +86,9 @@ class indexControl extends mobileHomeControl{
                 'designer_head'=>'/data/upload/store/{}/designer/header/',//设计师头像路径 {}替换成store_id
                 'category'=>$category,
                 'style'=>$style,
-                'decoration_work_path'=>'/shop/store/work/',//案例图片地址
-                'decoration_head'=>'/shop/store/work/',//案例图片地址
-                'decoration_request_path'=>'/shop/member/request/',//后跟会员ID
+                'decoration_work_path'=>'/data/upload/shop/store/work/',//案例图片地址
+                //'decoration_head'=>'/shop/store/work/',//案例图片地址
+                'decoration_request_path'=>'/data/upload//shop/member/request/',//后跟会员ID
                 'rec_list'=>$rec_list,//广告位
                 'act_list'=>$act_list,
                 'goods_path'=>'/data/upload/shop/store/goods/',// 后跟商户ID 商户商品图像路径 
@@ -98,7 +98,9 @@ class indexControl extends mobileHomeControl{
                 'pf_activity_path'=>'/data/upload/shop/activity/',//平台活动图像路径
                 'brand_path'=>'/data/upload/shop/brand/',//品牌图像路径
                 //'groupbuy_path'=>'/data/upload/shop/groupbuy/',//抢购活动海报路径 例：/data/upload/shop/groupbuy/12/12_05043585915065515_mid.jpg
-            );
+                'store_banner'=>'/data/upload/shop/store/',//店铺条幅基础地址
+                'store_avatar'=>'/data/upload/shop/store/',//店铺装修公司avator
+                );  
              output_data($global);        
         }
         /*
@@ -106,7 +108,9 @@ class indexControl extends mobileHomeControl{
          */
         public function brandrOp($param) {
          $model = Model();
-        $brand_r_list = Model('brand')->getBrandPassedList(array('brand_recommend'=>1) ,'brand_id,brand_name,brand_pic', 0, 'brand_sort asc, brand_id desc', 5);
+         $bnum=!empty($_REQUEST['bnum'])?$_REQUEST['bnum']:5;
+         $gnum=!empty($_REQUEST['gnum'])?$_REQUEST['gnum']:10;
+        $brand_r_list = Model('brand')->getBrandPassedList(array('brand_recommend'=>1) ,'brand_id,brand_name,brand_pic', 0, 'brand_sort asc, brand_id desc', $bnum);
        // $brands = $this->_tidyBrand($brand_c_list);
         $fieldstr = "goods_id,goods_commonid,goods_name,goods_jingle,store_id,store_name,goods_price,goods_promotion_price,goods_promotion_type,goods_marketprice,goods_storage,goods_image,goods_freight,goods_salenum,color_id,evaluation_good_star,evaluation_count,is_virtual,is_fcode,is_appoint,is_presell,have_gift";
         // 条件
@@ -117,7 +121,7 @@ class indexControl extends mobileHomeControl{
            // 字段
         $where['brand_id'] = $value['brand_id'];
         $model_goods = Model('goods');
-        $goods_list = $model_goods->getGoodsListByColorDistinct($where, $fieldstr, $order, 10);
+        $goods_list = $model_goods->getGoodsListByColorDistinct($where, $fieldstr, $order, $gnum);
         $brand_r_list[$key]['goods_list']=$goods_list;
        }
        

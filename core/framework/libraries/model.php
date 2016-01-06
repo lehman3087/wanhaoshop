@@ -36,7 +36,12 @@ class Model{
     {
         dkcache('field/_pk');
     }
-
+    
+    
+    private function _sendSMsg($code, $store_id, $param) {
+        QueueClient::push('sendStoreMsg', array('code' => $code, 'store_id' => $store_id, 'param' => $param));
+    }
+    
     /**
      * 生成表结构信息
      *
@@ -929,7 +934,8 @@ class ModelDb{
             	//防止条件传错，删除所有记录
             	return false;
             }
-        return DB::execute($sql);
+         DB::execute($sql);
+        return mysql_affected_rows();
     }
 
     public function update($data,$options) {

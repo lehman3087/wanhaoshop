@@ -18,12 +18,40 @@ class designer_workModel extends Model{
 	 * @param array $condition
 	 *
 	 */
-//	public function getDesignerWorkList($condition, $page='', $order='', $field='*') {
-//        $result = $this->field($field)->where($condition)->page($page)->order($order)->select();
-//        return $result;
-//	}
+	public function getDesignerWorkListWeb1($condition, $field='*',$page='', $order='id desc') {
+            $result = $this->field($field)->where($condition)->page($page)->order($order)->select();
+            return $result;
+	}
+        
+               /**
+     * 删除案例
+     * @param array $update 更新数据
+     * @param array $condition 条件
+     * @return boolean
+     */
+    public function delDwCommon($condition,$reason) {
+        $return = $this->where($condition)->delete();
+        if ($return) {
+            // 商品违规下架发送店铺消息
+            
+            $common_list = $this->getDesignerWorkListWeb1($condition, 'sn_name,sn_store_id,sn_designer_id');
+            foreach ($common_list as $val) {
+                Model('designer')->updateDesignerWorkCount(array('designer_id'=>$val['sn_designer_id']));
+                $param = array();
+                $param['remark'] = $reason;
+               // $param['common_id'] = $val['goods_commonid'];
+                $this->_sendSMsg('designer_work_del', $val['sn_store_id'], $param);
+            }
+            return true;
+        } else {
+            return false;
+        }
+    }
+        
         public function getDesignerWorkList($condition, $field = '*',$page=10,$count=5,$order='sn_collect desc') {
          $condition=$this->_dealCondition($condition);
+        // var_dump($condition);
+        // exit($condition);
        // $condition = $this->_getRecursiveClass($condition);
         return $this->table('designer_work,designer')->field($field)->on('designer_work.sn_designer_id = designer.id')->join('left')->where($condition)->order($order)->page($page)->select();
         }
@@ -32,8 +60,17 @@ class designer_workModel extends Model{
         public function getDesignerWorkListweb($condition, $field = '*',$page=10,$count=5,$order='sn_collect desc') {
        //  $condition=$this->_dealCondition($condition);
        // $condition = $this->_getRecursiveClass($condition);
+            $field='designer_work.id as id,designer_work.sn_category,designer_work.sn_area,designer_work.sn_cost,designer_work.sn_style,designer_work.sn_store_id,designer_work.sn_house_type,designer_work.sn_m_pic,designer_work.sn_name,designer_work.sn_collect as sn_collection_count,designer_work.sn_share_count,designer.sn_head,designer.sn_title as designername';
          return $this->table('designer_work,designer')->field($field)->on('designer_work.sn_designer_id = designer.id')->join('inner')->where($condition)->order($order)->page($page)->select();
         }
+        
+         public function getDesignerWorkListwebNoPage($condition, $field = '*',$count=5,$order='sn_collect desc') {
+       //  $condition=$this->_dealCondition($condition);
+       // $condition = $this->_getRecursiveClass($condition);
+         $field='designer_work.id,designer_work.sn_m_pic,designer_work.sn_name,designer_work.sn_collect as sn_collection_count,designer_work.sn_share_count,designer.sn_head';
+         return $this->table('designer_work,designer')->field($field)->on('designer_work.sn_designer_id = designer.id')->join('left')->where($condition)->order($order)->select();
+        }
+        
         
     
     
@@ -47,8 +84,8 @@ class designer_workModel extends Model{
                   $type =  'like';
                   $val="%".$value->matchValue."%";
                 }else if($value->matchType==1){
-                    $type =  '=';
-                    $val=$value->matchValue;
+                    $type =  'in';
+                    $val=  explode(',',$value->matchValue);
                 }else if($value->matchType==2){
                     $type =  'between';
                     $val=$value->matchValue;

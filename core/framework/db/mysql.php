@@ -262,6 +262,7 @@ class Db{
 		$sql = 'INSERT INTO `'.DBPRE.$table_name.'` ('.implode(',',$fields).') VALUES '.implode(',',$values);
 		$result = self::query($sql,$host);
 		$insert_id = self::getLastId();
+               // $insert_id =self::
 		return $insert_id ? $insert_id : $result;
 	}
 
@@ -329,6 +330,23 @@ class Db{
 	}
 
 	/**
+	 * 取取insert_id
+	 *
+	 * @return int
+	 */
+	public static function getLastId($host = 'master'){
+		self::commit($host);
+		$id = mysql_insert_id(self::$link[$host]);
+		if (!$id){
+		    $result = self::query('SELECT last_insert_id() as id',$host);
+		    if ($result === false) return false;
+			$id = mysql_fetch_array($result,MYSQL_ASSOC);
+			$id = $id['id'];
+		}
+		return $id;
+	}
+        
+        /**
 	 * 取取insert_id
 	 *
 	 * @return int

@@ -36,7 +36,7 @@ class member_indexControl extends mobileMemberControl {
          * 猜您喜欢商品
          */
        public function guessLikeOp() {       
-          $page=  !empty($_REQUEST['num'])?$_REQUEST['num']:20;
+        $page=  !empty($_REQUEST['num'])?$_REQUEST['num']:20;
         $goodlist=Model('goods_browse')->getGuessLikeGoods($this->member_info['member_id'],20);
         output_data($goodlist);
     }

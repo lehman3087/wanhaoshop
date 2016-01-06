@@ -181,6 +181,29 @@ class decorationControl extends SystemControl{
         }
     }
     
+    /*
+     * 案例违规删除
+     */
+    public function designer_work_delOp() {
+       
+        if (chksubmit()) {
+            $commonids = $_POST['commonids'];
+            $commonid_array = explode(',', $commonids);
+            foreach ($commonid_array as $value) {
+                if (!is_numeric($value)) {
+                    showDialog(L('nc_common_op_fail'), 'reload');
+                }
+            }
+            $where = array();
+            $where['id'] = array('in', $commonid_array);
+            $reason = trim($_POST['close_reason']);
+            Model('designer_work')->delDwCommon($where,$reason);
+            showDialog(L('nc_common_op_succ'), 'reload', 'succ');
+        }
+        Tpl::output('commonids', $_GET['id']);
+        Tpl::showpage('designerwork.close_remark', 'null_layout');
+    
+    }
      /**
      * 违规下架
      */
@@ -264,7 +287,7 @@ class decorationControl extends SystemControl{
                 break;
             // 全部商品
             default:
-                $work_list = $model_decoration->getDesignerWorkList($where);
+                $work_list = $model_decoration->getDesignerWorkListweb($where);
                 break;
         }
         Tpl::output('work_list', $work_list);

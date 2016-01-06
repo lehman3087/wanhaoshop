@@ -9,7 +9,7 @@
 
 defined('InShopNC') or exit('Access Invalid!');
 
-function d_header_thumb($work, $type = '',$user_id=''){
+function d_header_thumb($work, $type = '',$store_id=''){
     $search_array = explode(',', GOODS_IMAGES_EXT);
     
   //  $file = str_ireplace($search_array,'',$work['sn_work_pic']);
@@ -20,7 +20,7 @@ function d_header_thumb($work, $type = '',$user_id=''){
     if (preg_match('/^(\d+_)/',$fname)){
         $user_id = substr($fname,0,strpos($fname,'_'));
     }else{
-            $user_id = $user_id;
+            $user_id = $store_id;
     }
 //    return BASE_UPLOAD_PATH.'/'.ATTACH_DWORK.'/'.$user_id.'/'.$file;
 //    exit();<?php echo UPLOAD_SITE_URL.DS.ATTACH_STORE_BARE.DS.$_SESSION['store_id'].DS.ATTACH_DESIGNER_HEADER.DS.$output['sn_info']['sn_head'];

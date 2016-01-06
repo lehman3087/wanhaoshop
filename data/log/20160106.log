@@ -1,0 +1,3 @@
+[2016-01-06 12:24:51] /33hao/admin/index.php?act=decoration&op=designer_work_del&inajax=1 ( act=decoration&op=designer_work_del ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FROM `33hao_designer_work` WHERE ( id IN ('55') ) LIMIT 1000' at line 1
+SELECT sn_name,sn_store_id, FROM `33hao_designer_work` WHERE ( id IN ('55') ) LIMIT 1000  

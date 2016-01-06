@@ -73,14 +73,14 @@
         <?php if (!empty($output['work_list']) && is_array($output['work_list'])) { ?>
         <?php foreach ($output['work_list'] as $k => $v) {?>
         <tr class="hover edit">
-          <td><input type="checkbox" name="id[]" value="<?php echo $v['sn_store_id'];?>" class="checkitem"></td>
+          <td><input type="checkbox" name="id[]" value="<?php echo $v['id'];?>" class="checkitem"></td>
           <td><i class="icon-plus-sign" style="cursor: pointer;" nctype="ajaxWorkList" data-comminid="<?php echo $v['id'];?>" title="点击展开查看此需求详情；值过多时请横向拖动区域内的滚动条进行浏览。"></i></td>
           <td class="align-center"><?php echo get_decoration_company($v['sn_store_id']);?></td>
-          <td class="w60 picture"><div class="size-56x56"><span class="thumb size-56x56"><i></i><img src="<?php echo d_header_thumb($v['sn_head'], 60,$_SESSION['store_id']);?>" onload="javascript:DrawImage(this,56,56);"/></span></div></td>
+          <td class="w60 picture"><div class="size-56x56"><span class="thumb size-56x56"><i></i><img src="<?php echo d_header_thumb($v['sn_head'], 60,$v['sn_store_id']);?>" onload="javascript:DrawImage(this,56,56);"/></span></div></td>
           <td>
           <dl class="goods-info"><dt class="goods-name"><?php echo $v['sn_name'];?></dt>
 
-            <dd class="goods-store">设计师：<?php echo get_work_designer($v['sn_designer_id']);?></dd></dl>
+            <dd class="goods-store">设计师：<?php echo $v['designername'];?></dd></dl>
             </td>
           <td>
             <p><?php echo $v['sn_category'];?></p>
@@ -202,10 +202,10 @@ function getId() {
     return str;
 }
 
-// 商品下架
+// 案例删除
 function goods_lockup(ids) {
-    _uri = "<?php echo ADMIN_SITE_URL;?>/index.php?act=decoration&op=work_lockup&id=" + ids;
-    CUR_DIALOG = ajax_form('work_lockup', '违规下架理由', _uri, 350);
+    _uri = "<?php echo ADMIN_SITE_URL;?>/index.php?act=decoration&op=designer_work_del&id=" + ids;
+    CUR_DIALOG = ajax_form('work_lockup', '违规删除理由', _uri, 350);
 }
 </script>
 

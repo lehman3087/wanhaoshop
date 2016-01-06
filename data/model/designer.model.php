@@ -24,7 +24,16 @@ class designerModel extends Model{
         $result = $this->field($field)->where($condition)->page($page)->order($order)->select();
         return $result;
 	}
-       
+        
+        public function updateDesignerWorkCount($param) {
+            $condition['sn_designer_id']=$param['designer_id'];
+            $count=Model('designer_work')->where($condition)->count();
+            $condition2['id']=$param['designer_id'];
+            $update['work_count']=$count;
+            
+            $this->where($condition2)->update($update);
+            
+        }
         
         public function _dealOrder($param) {
             if($param=='1'){
@@ -74,12 +83,12 @@ class designerModel extends Model{
         
     public function getDesignerCount($condition, $field = '*', $group = '') {
        
-        return $this->table('designer')->where($condition)->group($group)->count1($field);
+        return $this->table('designer')->where($condition)->group($group)->count($field);
     }
     
     public function getDesignerRowCount($condition, $field = '*', $group = '') {
         $condition=  $this->_dealCondition($condition);
-        return $this->table('designer')->where($condition)->group($group)->count1($field);
+        return $this->table('designer')->where($condition)->count();
     }
     
     public function getDesignerWorkCount($designers,$order) {

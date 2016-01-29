@@ -40,4 +40,48 @@ class member_indexControl extends mobileMemberControl {
         $goodlist=Model('goods_browse')->getGuessLikeGoods($this->member_info['member_id'],20);
         output_data($goodlist);
     }
+    
+    	/**
+	 * 我的资料【用户中心】
+	 *
+	 * @param
+	 * @return
+	 */
+	public function memberInfoOp() {
+
+		//Language::read('member_home_member');
+		//$lang	= Language::getLangContent();
+
+		$model_member	= Model('member');
+
+		//if (chksubmit()){
+			$member_array	= array();
+			$member_array['member_truename']	= $_REQUEST['member_truename'];
+                        $member_array['member_truename']	= $_REQUEST['member_truename'];
+                        $member_array['member_nickname']	= $_REQUEST['member_nickname'];
+			$member_array['member_sex']			= $_REQUEST['member_sex'];
+			$member_array['member_qq']			= $_REQUEST['member_qq'];
+			$member_array['member_ww']			= $_REQUEST['member_ww'];
+			$member_array['member_areaid']		= $_REQUEST['area_id'];
+			$member_array['member_cityid']		= $_REQUEST['city_id'];
+			$member_array['member_provinceid']	= $_REQUEST['province_id'];
+			$member_array['member_areainfo']	= $_REQUEST['area_info'];
+			if (strlen($_REQUEST['birthday']) == 10){
+				$member_array['member_birthday']	= $_REQUEST['birthday'];
+			}
+			$member_array['member_privacy']		= serialize($_REQUEST['privacy']);
+			$update = $model_member->editMember(array('member_id'=>$this->member_info['member_id']),$member_array);
+
+			//$message = $update? $lang['nc_common_save_succ'] : $lang['nc_common_save_fail'];
+			//showDialog($message,'reload',$update ? 'succ' : 'error');
+		//}
+                
+                        if($update){
+                            output_suc('1');
+                        }else{
+                            output_special_code('10500');
+                        }
+
+	}
+        
 }

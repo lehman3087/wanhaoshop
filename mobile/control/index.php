@@ -56,6 +56,20 @@ class indexControl extends mobileHomeControl{
             
         }
         
+        public function contactOp($param) {
+            if(empty($_REQUEST["contact_name"])||empty($_REQUEST["contact_phone"])){
+                output_special_code(10500);
+            }
+            $insert["contact_name"]=$_REQUEST["contact_name"];
+            $insert["contact_phone"]=$_REQUEST["contact_phone"];
+            $insert["contact_regin"]=$_REQUEST["contact_regin"];
+            $id=Model("contact")->insert($insert);
+            if($id>0){
+                output_suc('1');
+            }
+            
+        }
+        
         
         public function getGlobalOp() {
             $model_decoration_style=  Model('decoration');

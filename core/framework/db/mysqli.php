@@ -220,12 +220,9 @@ class Db{
                
 		$result = self::query($sql,$host);
 		if ($result === false) $result = array();
-                
-               
-                        
+                 
 		while ($tmp=mysqli_fetch_array($result,MYSQLI_ASSOC)){
-			$array[] = $tmp;
-                         
+			$array[] = $tmp;  
 		}
 		if ($param['cache'] !== false && !isset($_cache[$key])){
 			$_cache[$key] = $array;

@@ -11,9 +11,13 @@ class messageModel {
 	 * @param	array $param	条件数组
 	 * @param	object $page	分页对象调用
 	 */
-	public function listMessage($condition,$page='') {
+    
+        public $msgType=array('1'=>'systemmsg','3'=>'intramsg','4'=>'dealmsg','5'=>'noticemsg');
+        public function listMessage($condition,$page='') {
 		//得到条件语句
+                //var_dump($condition);
 		$condition_str = $this->getCondition($condition);
+               // var_dump($condition_str);
 		$param	= array();
 		$param['table']		= 'message';
 		$param['where']		= $condition_str;
@@ -21,6 +25,23 @@ class messageModel {
 		$message_list		= Db::select($param,$page);
 		return $message_list;
 	}
+        
+        /*
+         * 各种消息类型未读数量
+         */
+        public function msgTypeCount($condition) {
+           $types = $condition['message_type_in'];
+           $array=  explode(',', $types);
+           $msgTypeCount=array();
+           foreach ($array as  $value) {
+               $condition['message_type_in']=null;
+               $condition['message_type']=$value;
+               $condition_str = $this->getCondition($condition);
+               $msgTypeCount[$this->msgType[$value]] =  intval(Db::getCount('message',$condition_str)) ;
+           }
+               
+            return $msgTypeCount;
+        }
 	/**
 	 * 卖家站内信列表
 	 * @param	array $param	条件数组
@@ -260,5 +281,6 @@ class messageModel {
 			}
 		}
 		return $condition_sql;
+              //  var_dump($condition_sql);
 	}
 }

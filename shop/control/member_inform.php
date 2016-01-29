@@ -338,7 +338,6 @@ class member_informControl extends BaseMemberControl{
      * 根据举报类型id获取，举报具体列表
      */
     public function get_subject_by_typeidOp() {
-
         $inform_subject_type_id = trim($_POST['typeid']);
         if(empty($inform_subject_type_id)) {
             echo '';
@@ -362,8 +361,6 @@ class member_informControl extends BaseMemberControl{
 
         }
     }
-
-
 	/**
 	 * 用户中心右边，小导航
 	 *

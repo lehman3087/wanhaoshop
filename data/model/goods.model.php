@@ -1165,7 +1165,7 @@ class goodsModel extends Model{
         $goods_info['spec_value'] = unserialize($goods_info['spec_value']);
         $goods_info['spec_name'] = unserialize($goods_info['spec_name']);
         $goods_info['goods_spec'] = unserialize($goods_info['goods_spec']);
-        $goods_info['goods_spec_ids'] = array_keys(unserialize($goods_info['goods_spec']));
+        $goods_info['goods_spec_ids'] = array_keys($goods_info['goods_spec']);
         $goods_info['goods_attr'] = unserialize($goods_info['goods_attr']);
         $goods_info['m_body']=unserialize($goods_info['mobile_body']);
         // 手机商品描述
@@ -1192,6 +1192,7 @@ class goodsModel extends Model{
         $spec_list = array();       // 各规格商品地址，js使用
         $spec_list_mobile = array();       // 各规格商品地址，js使用
         $spec_image = array();      // 各规格商品主图，规格颜色图片使用
+        $var = 0;
         foreach ($spec_array as $key => $value) {
             $s_array = unserialize($value['goods_spec']);
             $tmp_array = array();
@@ -1206,9 +1207,11 @@ class goodsModel extends Model{
             $tpl_spec['sign'] = $spec_sign;
             $tpl_spec['url'] = urlShop('goods', 'index', array('goods_id' => $value['goods_id']));
             $spec_list[] = $tpl_spec;
-            $spec_list_mobile[$spec_sign] = array('goods_id'=>$value['goods_id'],'goods_image'=>$value['goods_image'],'goods_storage'=>$value['goods_storage'],'goods_price'=>$value['goods_price']);
+            $spec_list_mobile[$var]['key']=$spec_sign;
+            $spec_list_mobile[$var]['value'] = array('store_id'=>$value['store_id'],'goods_id'=>$value['goods_id'],'goods_image'=>$value['goods_image'],'goods_storage'=>$value['goods_storage'],'goods_price'=>$value['goods_price']);
             $spec_image[$value['color_id']] = thumb($value, 60);
-        }
+            $var++;
+                }
         $spec_list = json_encode($spec_list);
 
         // 商品多图
@@ -1284,7 +1287,7 @@ class goodsModel extends Model{
         }
         $result = array();
         $result['goods_info'] = $goods_info;
-        $result['spec_list'] = $spec_list;
+        $result['spec_list'] = $spec_list_mobile;
         $result['spec_list_mobile'] = $spec_list_mobile;
         $result['spec_image'] = $spec_image;
         $result['goods_image'] = $goods_image;

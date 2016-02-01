@@ -274,6 +274,7 @@ if ($fp)
 
         
         public function form_image_uploadOp(){
+            
 		$upload = new UploadFile();
                 
                 switch ($_REQUEST['img_use_type']) {
@@ -296,8 +297,6 @@ if ($fp)
              //   output_error(C('image_max_filesize'));
 		//$result = $upload->upfile($_POST['id']);
                 $result = $upload->upfile('image');
-
-
 		$output	= array();
 		if(!$result){
 			/**

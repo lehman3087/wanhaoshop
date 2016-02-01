@@ -280,7 +280,10 @@ if ($fp)
                     case 'dc_requirement':
                         $dir=ATTACH_REQUEST.'/'.$_REQUEST['user_id'].'/';
                         break;
-
+                    case 'member_avatar':
+                        $dir=ATTACH_AVATAR.'/'.$_REQUEST['user_id'].'/';
+                        break;
+                    
                     default:
                         break;
                 }

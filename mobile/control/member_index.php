@@ -90,9 +90,9 @@ class member_indexControl extends mobileMemberControl {
             
             $update = $model_member->editMember(array('member_id'=>$this->member_info['member_id']),$member_array);
             if($update){
-                            output_suc($_REQUEST['member_nickname']);
-                        }else{
-                            output_special_code('10500');
+                    output_suc($_REQUEST['member_nickname']);
+            }else{
+                    output_special_code('10500');
             }
         }
         

@@ -98,7 +98,7 @@ class indexControl extends mobileHomeControl{
                 'snsTracePath'=>'/shop/index.php?act=store_snshome&op=mobileStraceinfo&st_id=',
                 'decoration_style'=>$styles,
                 'designer_head'=>'/data/upload/store/{}/designer/header/',//设计师头像路径 {}替换成store_id
-                'member_avatar'=>'/data/upload/shop/avatar/{}/',//设计师头像路径 {}替换成userid,后跟图像地址
+                'member_avatar'=>'/data/upload/shop/avatar/{}/',//{}替换成userid,后跟图像名称
                 'category'=>$category,
                 'style'=>$style,
                 'decoration_work_path'=>'/data/upload/shop/store/work/',//案例图片地址

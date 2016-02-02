@@ -183,7 +183,7 @@ class goodsControl extends mobileHomeControl{
          $store_info = $model_store->getStoreOnlineInfoByID($goods_detail['goods_info']['store_id']);
         // $storeListBasic = $model_store-> getStoreInfoBasic($storeList);
        // $store_info = $model_store->getStoreInfoByID($goods_detail['goods_info']['store_id']);
-        $goods_detail['store_info']['store_id'] = $store_info;
+        $goods_detail['store_info'] = $store_info;
 
         //商品详细信息处理
         $goods_detail = $this->_goods_detail_extend($goods_detail);
@@ -262,7 +262,7 @@ class goodsControl extends mobileHomeControl{
                 //var_dump($goods_detail);
 		
 	//$goods_id = intval($_GET['goods_id']);
-        $goods_detail['store_info']['comments']=$this->_get_comments($goods_id, $_REQUEST['type'], 5);
+        $goods_detail['goods_comments']=$this->_get_comments($goods_id, $_REQUEST['type'], 5);
         output_data($goods_detail);
         
     }

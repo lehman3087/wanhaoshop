@@ -181,20 +181,10 @@ class goodsControl extends mobileHomeControl{
         }
         $goods_detail['goods_commend_list'] = $goods_commend_list;
          $store_info = $model_store->getStoreOnlineInfoByID($goods_detail['goods_info']['store_id']);
+        // $storeListBasic = $model_store-> getStoreInfoBasic($storeList);
        // $store_info = $model_store->getStoreInfoByID($goods_detail['goods_info']['store_id']);
-        $goods_detail['store_info']['store_id'] = $store_info['store_id'];
-        $goods_detail['store_info']['store_name'] = $store_info['store_name'];
-        $goods_detail['store_info']['member_id'] = $store_info['member_id'];
-	//显示QQ及旺旺 好商城V3
-	$goods_detail['store_info']['store_qq'] = $store_info['store_qq'];
-	$goods_detail['store_info']['store_ww'] = $store_info['store_ww'];
-	$goods_detail['store_info']['store_phone'] = $store_info['store_phone'];
-        $goods_detail['store_info']['member_name'] = $store_info['member_name'];
-        $goods_detail['store_info']['avatar'] = getMemberAvatarForID($store_info['member_id']);
-        $goods_detail['store_info']['store_logo'] = getStoreLogo($store_info['store_label'],'store_logo');
-        $goods_detail['store_info']['goods_count'] = $store_info['goods_count'];
-        $goods_detail['store_info']['evaluate_store'] = $store_info['evaluate_store'];
-        $goods_detail['store_info']['store_zy'] = $store_info['store_zy'];
+        $goods_detail['store_info']['store_id'] = $store_info;
+
         //商品详细信息处理
         $goods_detail = $this->_goods_detail_extend($goods_detail);
 	
@@ -271,11 +261,19 @@ class goodsControl extends mobileHomeControl{
 	
                 //var_dump($goods_detail);
 		
-		
-
+	//$goods_id = intval($_GET['goods_id']);
+        $goods_detail['store_info']['comments']=$this->_get_comments($goods_id, $_REQUEST['type'], 5);
         output_data($goods_detail);
         
     }
+    
+    private function commentsOp() {
+        $comments=$this->_get_comments($goods_id, $_REQUEST['type'], 5);
+        if(!empty($comments)){
+            output_data($comments);
+        }
+    }
+    
   
     /**
      * 商品详细信息处理
@@ -323,6 +321,32 @@ class goodsControl extends mobileHomeControl{
         return $goods_detail;
     }
 
+       private function _get_comments($goods_id, $type, $page) {
+        $condition = array();
+        $condition['geval_goodsid'] = $goods_id;
+        switch ($type) {
+            case '1':
+                $condition['geval_scores'] = array('in', '5,4');
+                Tpl::output('type', '1');
+                break;
+            case '2':
+                $condition['geval_scores'] = array('in', '3,2');
+                Tpl::output('type', '2');
+                break;
+            case '3':
+                $condition['geval_scores'] = array('in', '1');
+                Tpl::output('type', '3');
+                break;
+        }
+
+        //查询商品评分信息
+        $model_evaluate_goods = Model("evaluate_goods");
+        $goodsevallist = $model_evaluate_goods->getEvaluateGoodsList($condition, $page);
+        return $goodsevallist;
+//        Tpl::output('goodsevallist',$goodsevallist);
+//        Tpl::output('show_page',$model_evaluate_goods->showpage('5'));
+    }
+    
     /**
      * 商品详细页
      */

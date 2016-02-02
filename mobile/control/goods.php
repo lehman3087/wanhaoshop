@@ -268,6 +268,7 @@ class goodsControl extends mobileHomeControl{
     }
     
     private function commentsOp() {
+        $goods_id=$_REQUEST['goods_id'];
         $comments=$this->_get_comments($goods_id, $_REQUEST['type'], 5);
         if(!empty($comments)){
             output_data($comments);

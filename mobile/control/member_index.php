@@ -53,8 +53,7 @@ class member_indexControl extends mobileMemberControl {
 		//$lang	= Language::getLangContent();
 
 		$model_member	= Model('member');
-
-		//if (chksubmit()){
+                        //if (chksubmit()){
 			$member_array	= array();
 			$member_array['member_truename']	= $_REQUEST['member_truename'];
                         $member_array['member_truename']	= $_REQUEST['member_truename'];
@@ -70,6 +69,7 @@ class member_indexControl extends mobileMemberControl {
 				$member_array['member_birthday']	= $_REQUEST['birthday'];
 			}
 			$member_array['member_privacy']		= serialize($_REQUEST['privacy']);
+                        
 			$update = $model_member->editMember(array('member_id'=>$this->member_info['member_id']),$member_array);
 
 			//$message = $update? $lang['nc_common_save_succ'] : $lang['nc_common_save_fail'];
@@ -84,4 +84,28 @@ class member_indexControl extends mobileMemberControl {
 
 	}
         
-}
+        public function upNickNameOp() {
+            $model_member	=       Model('member');
+            $member_array['member_nickname']	= $_REQUEST['member_nickname'];
+            
+            $update = $model_member->editMember(array('member_id'=>$this->member_info['member_id']),$member_array);
+            if($update){
+                            output_suc($_REQUEST['member_nickname']);
+                        }else{
+                            output_special_code('10500');
+            }
+        }
+        
+        public function upAvatarOp() {
+            $model_member	=       Model('member');
+            $member_array['member_avatar']	=   $_REQUEST['member_avatar'];
+            
+            $update = $model_member->editMember(array('member_id'=>$this->member_info['member_id']),$member_array);
+            if($update){
+                            output_suc($_REQUEST['member_avatar']);
+                        }else{
+                            output_special_code('10500');
+             }
+        }
+        
+}   

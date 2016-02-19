@@ -11,6 +11,19 @@
         </file>
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/Applications/MAMP/htdocs/33hao/data/config/config.ini.php</file>
+            <file>file:/Applications/MAMP/htdocs/33hao/queue/model/queue.model.php</file>
+            <file>file:/Applications/MAMP/htdocs/33hao/core/framework/libraries/sendstoremsg.php</file>
+            <file>file:/Applications/MAMP/htdocs/33hao/core/framework/libraries/sendmembermsg.php</file>
+            <file>file:/Applications/MAMP/htdocs/33hao/admin/control/account.php</file>
+            <file>file:/Applications/MAMP/htdocs/33hao/mobile/control/member_message.php</file>
+            <file>file:/Applications/MAMP/htdocs/33hao/core/framework/libraries/sdk.php</file>
+            <file>file:/Applications/MAMP/htdocs/33hao/data/model/goods.model.php</file>
+            <file>file:/Applications/MAMP/htdocs/33hao/queue/control/index.php</file>
+            <file>file:/Applications/MAMP/htdocs/33hao/core/framework/libraries/configure.php</file>
+            <file>file:/Applications/MAMP/htdocs/33hao/queue/control/control.php</file>
+            <file>file:/Applications/MAMP/htdocs/33hao/data/logic/queue.logic.php</file>
+        </group>
     </open-files>
 </project-private>

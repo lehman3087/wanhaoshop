@@ -8,8 +8,8 @@
  *
  * by 33hao 好商城V3  www.33hao.com 开发
  */
-defined('InShopNC') or exit('Access Invalid!');
 
+defined('InShopNC') or exit('Access Invalid!');
 class queueModel extends Model{
 
     /**
@@ -153,4 +153,103 @@ class queueModel extends Model{
         $send->send($param['param']);
         return true;
     }
+    /**
+     * 推送android通知
+     */
+     public function sendAndroidNotification($param) {
+         $youmengAppkey=C('ad_ym_appkey');
+         $youmengSecret=C('ad_ym_secret');
+        $demo = new Notification($youmengAppkey, $youmengSecret);
+        
+        switch ($param['target']) {
+            case 'AndroidUnicast':
+                $demo->sendAndroidUnicast();
+                break;
+            case 'AndroidGroupcast':
+                $demo->sendAndroidGroupcast();
+                break;
+            case 'AndroidFilecast':
+                $demo->sendAndroidFilecast();
+                break;
+            case 'AndroidBroadcast':
+                $demo->sendAndroidBroadcast();
+                break;
+            case 'IOSUnicast':
+                $demo->sendIOSUnicast();
+                break;
+            case 'IOSFilecast':
+                $demo->sendIOSFilecast();
+                break;
+            case 'IOSGroupcast':
+                $demo->sendIOSGroupcast();
+                break;
+            case 'IOSCustomizedcast':
+                $demo->sendIOSCustomizedcast();
+                break;
+            case 'IOSBroadcast':
+                $demo->sendIOSBroadcast();
+                break;
+            default:
+                break;
+        }
+        
+/* these methods are all available, just fill in some fields and do the test
+ * $demo->sendAndroidBroadcast();
+ * $demo->sendAndroidFilecast();
+ * $demo->sendAndroidGroupcast();
+ * $demo->sendAndroidCustomizedcast();
+ *
+ * $demo->sendIOSBroadcast();
+ * $demo->sendIOSUnicast();
+ * $demo->sendIOSFilecast();
+ * $demo->sendIOSGroupcast();
+ * $demo->sendIOSCustomizedcast();
+ *  
+ */
+    }
+    
+     /**
+     * 推送Ios通知
+     */
+     public function sendIosNotification($param) {
+         $youmengAppkey=C('ad_ym_appkey');
+         $youmengSecret=C('ad_ym_secret');
+        $demo = new Notification($youmengAppkey, $youmengSecret);
+        
+        switch ($param['target']) {
+            case 'IOSUnicast':
+                $demo->sendIOSUnicast();
+                break;
+            case 'IOSFilecast':
+                $demo->sendIOSFilecast();
+                break;
+            case 'IOSGroupcast':
+                $demo->sendIOSGroupcast();
+                break;
+            case 'IOSCustomizedcast':
+                $demo->sendIOSCustomizedcast();
+                break;
+            case 'IOSBroadcast':
+                $demo->sendIOSBroadcast();
+                break;
+            default:
+                break;
+        }
+        
+/* these methods are all available, just fill in some fields and do the test
+ * $demo->sendAndroidBroadcast();
+ * $demo->sendAndroidFilecast();
+ * $demo->sendAndroidGroupcast();
+ * $demo->sendAndroidCustomizedcast();
+ *
+ * $demo->sendIOSBroadcast();
+ * $demo->sendIOSUnicast();
+ * $demo->sendIOSFilecast();
+ * $demo->sendIOSGroupcast();
+ * $demo->sendIOSCustomizedcast();
+ *  
+ */
+    }
+    
+    
 }

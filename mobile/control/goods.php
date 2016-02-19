@@ -339,7 +339,7 @@ class goodsControl extends mobileHomeControl{
                 Tpl::output('type', '3');
                 break;
         }
-
+        
         //查询商品评分信息
         $model_evaluate_goods = Model("evaluate_goods");
         $goodsevallist = $model_evaluate_goods->getEvaluateGoodsList($condition, $page);

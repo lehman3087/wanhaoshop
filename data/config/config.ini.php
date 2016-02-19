@@ -32,6 +32,12 @@ $config['cookie_pre'] 		= '2310_';
 $config['thumb']['cut_type'] = 'gd';
 $config['thumb']['impath'] = '';
 $config['cache']['type'] 			= 'file';
+
+//友盟接入账号
+$config['ad_ym_appkey'] = '56c414f9e0f55a7bba0001ff';
+$config['ad_ym_secret']='zdmntjjwn5enyv3s865n1ca8xrdmterc'; 
+        
+        
 //$config['redis']['prefix']      	= 'nc_';
 //$config['redis']['master']['port']     	= 6379;
 //$config['redis']['master']['host']     	= '127.0.0.1';

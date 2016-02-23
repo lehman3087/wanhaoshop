@@ -18,7 +18,7 @@ class goods_classControl extends mobileHomeControl{
 
 	public function indexOp() {
         if(!empty($_REQUEST['gc_id']) && intval($_REQUEST['gc_id']) > 0) {
-            $this->_get_class_list($_GET['gc_id']);
+            $this->_get_class_list($_REQUEST['gc_id']);
         } else{
           $this-> get_all_category2();
            //  $this->_get_all_class_list();

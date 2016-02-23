@@ -84,6 +84,8 @@ class indexControl extends mobileHomeControl{
             $model_decoration = Model('decoration');
              $category=$model_decoration->get_category();
              $style=$model_decoration->get_style();
+            // Tpl::output('hot_search',@explode(',',C('hot_search')));//热门搜索
+             $hot_search=@explode(',',C('hot_search'));
              
 //             //广告位
 //           
@@ -122,6 +124,7 @@ class indexControl extends mobileHomeControl{
                 //'groupbuy_path'=>'/data/upload/shop/groupbuy/',//抢购活动海报路径 例：/data/upload/shop/groupbuy/12/12_05043585915065515_mid.jpg
                 'store_banner'=>'/data/upload/shop/store/',//店铺条幅基础地址
                 'store_avatar'=>'/data/upload/shop/store/',//店铺装修公司avator
+                'hot_search'=>$hot_search
                 );  
              output_data($global);        
         }

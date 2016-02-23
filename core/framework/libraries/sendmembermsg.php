@@ -37,7 +37,7 @@ class sendMemberMsg {
                 'title' => $param['title'],
                 // 消息内容 
                 'description' => $param['content'],
-             //   'custom_content'=>array('uri'=>$param['uri'],'invalid'=>$param['invalid']);
+                'custom_content'=>array('uri'=>$param['uri'],'invalid'=>$param['invalid']),
 
             );
 

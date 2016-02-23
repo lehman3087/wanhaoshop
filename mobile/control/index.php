@@ -26,6 +26,13 @@ class indexControl extends mobileHomeControl{
 	}
         
         
+        public function testpushOp() {
+            
+            QueueClient::push('sendMemberMsg', $param);
+            
+        }
+        
+        
         //首页展位列表
         public function adsOp($param) {
             $model = model('rec_position');

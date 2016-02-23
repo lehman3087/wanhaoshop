@@ -21,13 +21,55 @@ class sendMemberMsg {
     public function set($key,$value){
         $this->$key = $value;
     }
+    
+    
+      public function pushAndroidAll($param) {
+            // 创建SDK对象.
+            
+  
+            $sdk = new PushSDK();
+            
+          //  $channelId = '3785562685113372034';
 
+            // message content.
+            $message = array (
+                // 消息的标题.
+                'title' => $param['title'],
+                // 消息内容 
+                'description' => $param['content'],
+             //   'custom_content'=>array('uri'=>$param['uri'],'invalid'=>$param['invalid']);
+
+            );
+
+            // 设置消息类型为 通知类型.
+            $opts = array (
+                'msg_type' => 1 
+            );
+
+            // 向目标设备发送一条消息
+            //$rs = $sdk -> pushMsgToSingleDevice($channelId, $message, $opts);
+            $rs = $sdk -> pushMsgToAll($message, $opts);
+
+            // 判断返回值,当发送失败时, $rs的结果为false, 可以通过getError来获得错误信息.
+            if($rs === false){
+               print_r($sdk->getLastErrorCode()); 
+               print_r($sdk->getLastErrorMsg()); 
+            }else{
+                // 将打印出消息的id,发送时间等相关信息.
+                print_r($rs);
+            }   
+    }
+    
     public function send($param = array()) {
+        
+        
         $msg_tpl = rkcache('member_msg_tpl', true);
-        if (!isset($msg_tpl[$this->code]) || $this->member_id <= 0) {
-            return false;
-        }
-
+//        if (!isset($msg_tpl[$this->code]) || $this->member_id <= 0) {
+//            return false;
+//        }
+        
+        $this->pushAndroidAll($param);
+        
         $tpl_info = $msg_tpl[$this->code];
 
         $setting_info = Model('member_msg_setting')->getMemberMsgSettingInfo(array('mmt_code' => $this->code, 'member_id' => $this->member_id), 'is_receive');

@@ -25,8 +25,21 @@ class loginControl extends mobileHomeControl {
         }
         $model_member = Model('member');
         $array = array();
-        $array['member_name']	= $_REQUEST['username'];
-        $array['member_passwd']	= md5(trim($_REQUEST['password']));
+//        $array['member_name']	= $_REQUEST['username'];
+//        $array['member_passwd']	= md5(trim($_REQUEST['password']));
+        
+        $array['member_name|member_email|member_mobile']	= $_POST['user_name'];
+			$array['member_passwd']	= md5(trim($_REQUEST['password']));
+//			$member_info = $model_member->getMemberInfo($array);
+//			if(is_array($member_info) and !empty($member_info)) {
+//				if(!$member_info['member_state']){
+//			        showDialog($lang['login_index_account_stop'],''.'error',$script);
+//				}
+//			}else{
+//			    process::addprocess('login');
+//			    showDialog($lang['login_index_login_fail'],'','error',$script);
+//			}
+                        
        // var_dump($array);
         $member_info = $model_member->getMemberInfo($array);
         //var_dump($member_info);

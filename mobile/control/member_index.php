@@ -123,6 +123,31 @@ class member_indexControl extends mobileMemberControl {
             }
         }
         
+        public function upEmailOp() {
+            $model_member	=       Model('member');
+            $member_array['member_email']	= $_REQUEST['member_email'];
+            
+            $update = $model_member->editMember(array('member_id'=>$this->member_info['member_id']),$member_array);
+            if($update){
+                    output_suc('1');
+            }else{
+                    output_special_code('10500');
+            }
+        }
+        
+        public function upUsernameOp() {
+            $model_member	=       Model('member');
+            $member_array['member_name']	= $_REQUEST['member_name'];
+            
+            $update = $model_member->editMember(array('member_id'=>$this->member_info['member_id']),$member_array);
+            if($update){
+                    output_suc('1');
+            }else{
+                    output_special_code('10500');
+            }
+        }
+        
+        
         
         public function upAvatarOp() {
             $model_member	=       Model('member');

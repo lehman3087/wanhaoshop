@@ -117,6 +117,12 @@ class messageModel {
 		$array['to_member_name']	= $param['to_member_name']?$param['to_member_name']:'';
 		$array['message_body']		= trim($param['msg_content']);
 		$array['message_time']		= time();
+                
+                $array['message_title'] = $param['message_title'];
+                $array['message_uri'] = $param['message_uri'];
+                $array['message_invalid'] = $param['message_invalid'];
+                                
+                
 		$array['message_update_time']= time();
 		$array['message_type']		= $param['message_type']?$param['message_type']:'0';
 		$array['message_ismore']	= $param['message_ismore']?$param['message_ismore']:'0';

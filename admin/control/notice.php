@@ -16,6 +16,12 @@ class noticeControl extends SystemControl{
 		//提交
 		if (chksubmit()){
 			$content = trim($_POST['content1']);//信息内容
+                        $title=trim($_POST['message_title']);//信息标题
+                        $message_uri=trim($_POST['message_uri']);//跳转连接
+                        $message_invalid=trim($_POST['message_invalid']);//是否过期
+                        
+                        
+                        
 			$send_type = intval($_POST['send_type']);
 			//验证
 			$obj_validate = new Validate();
@@ -73,10 +79,26 @@ class noticeControl extends SystemControl{
 				} else {
 					$insert_arr['member_id'] = ",".implode(',',$memberid_list).",";
 				}
+                                $insert_arr['message_title'] = $title;
+                                $insert_arr['message_uri'] = $message_uri;
+                                $insert_arr['message_invalid'] = strtotime($message_invalid);
+                                
+                                
 				$insert_arr['msg_content'] = $content;
 				$insert_arr['message_type'] = 1;
 				$insert_arr['message_ismore'] = 1;
 				$model_message->saveMessage($insert_arr);
+                               // 
+                               //var_dump(in_array('2',$_POST['push_type']));
+                             
+                                if(in_array('2',$_POST['push_type'])){
+                                   
+                                    $Msg['title']=$title;
+                                    $Msg['content']=$content;
+                                    $Msg['uri']=$message_uri;
+                                    $Msg['invalid']=strtotime($message_invalid);
+                                    QueueClient::push('sendMemberMsg', $Msg);
+                                }
 				//跳转
 				$this->log(L('notice_index_send'),1);
 				showMessage(Language::get('notice_index_send_succ'),'index.php?act=notice&op=notice');

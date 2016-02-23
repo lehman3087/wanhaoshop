@@ -15,9 +15,6 @@ class member_messageControl extends mobileMemberControl {
 		parent::__construct();
 	}
 
-    /**
-     * 最近联系人
-     */
 	/**
 	 * 消息列表
 	 *

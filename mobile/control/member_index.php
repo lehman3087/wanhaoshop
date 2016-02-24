@@ -139,10 +139,11 @@ class member_indexControl extends mobileMemberControl {
         
         public function upPhoneOp() {
             $model_member	=       Model('member');
-            $member_array['member_email']	= $_REQUEST['member_mobile'];
-            $check_member	= $this->infoMember(array('member_mobile'=>trim($_REQUEST['member_mobile'])));
+            $member_array['member_mobile']	= $_REQUEST['member_mobile'];
+            $check_member	= $model_member->infoMember(array('member_mobile'=>trim($_REQUEST['member_mobile'])));
 		if(is_array($check_member) and count($check_member) > 0) {
-                    return array('error' => '10406');
+                   // return array('error' => '10406');
+                    output_special_code('10406');
 		}
                 
             $update = $model_member->editMember(array('member_id'=>$this->member_info['member_id']),$member_array);
@@ -156,11 +157,12 @@ class member_indexControl extends mobileMemberControl {
         public function upEmailOp() {
             $model_member	=       Model('member');
             $member_array['member_email']	= $_REQUEST['member_email'];
-            $check_member	= $this->infoMember(array('member_email'=>trim($_REQUEST['member_email'])));
-		if(is_array($check_member) and count($check_member) > 0) {
-                    return array('error' => '10406');
-		}
             
+            $check_member	= $model_member->infoMember(array('member_email'=>trim($_REQUEST['member_email'])));
+		if(is_array($check_member) and count($check_member) > 0) {
+                     output_special_code('10406');
+		}
+           // var_dump($check_member);
             $update = $model_member->editMember(array('member_id'=>$this->member_info['member_id']),$member_array);
             if($update){
                     output_suc('1');
@@ -173,9 +175,9 @@ class member_indexControl extends mobileMemberControl {
         public function upUsernameOp() {
             $model_member	=       Model('member');
             $member_array['member_name']	= $_REQUEST['member_name'];
-            $check_member	= $this->infoMember(array('member_name'=>trim($_REQUEST['member_name'])));
+            $check_member	= $model_member->infoMember(array('member_name'=>trim($_REQUEST['member_name'])));
 		if(is_array($check_member) and count($check_member) > 0) {
-                    return array('error' => '10406');
+                     output_special_code('10406');
 		}
                 
             $update = $model_member->editMember(array('member_id'=>$this->member_info['member_id']),$member_array);

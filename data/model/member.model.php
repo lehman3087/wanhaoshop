@@ -297,6 +297,7 @@ class memberModel extends Model {
 		    $member_info['member_name']			= $param['member_name'];
 		    $member_info['member_passwd']		= md5(trim($param['member_passwd']));
 		    $member_info['member_email']		= $param['member_email'];
+                    $member_info['member_mobile']		= $param['member_mobile'];
 		    $member_info['member_time']			= TIMESTAMP;
 		    $member_info['member_login_time'] 	= TIMESTAMP;
 		    $member_info['member_old_login_time'] = TIMESTAMP;

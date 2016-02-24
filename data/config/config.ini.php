@@ -2,6 +2,7 @@
 // defined('InShopNC') or exit('Access Invalid!');
 
 $config = array();
+<<<<<<< HEAD
 $config['base_site_url'] 		= 'http://whao.a-caggie.cn';
 $config['shop_site_url'] 		= 'http://whao.a-caggie.cn/shop';
 $config['cms_site_url'] 		= 'http://whao.a-caggie.cn/cms';
@@ -14,6 +15,20 @@ $config['chat_site_url'] 		= 'http://whao.a-caggie.cn/chat';
 $config['node_site_url'] 		= 'http://::1:8090';
 $config['upload_site_url']		= 'http://whao.a-caggie.cn/data/upload';
 $config['resource_site_url']	= 'http://whao.a-caggie.cn/data/resource';
+=======
+$config['base_site_url'] 		= 'http://192.168.31.225/33hao';
+$config['shop_site_url'] 		= 'http://192.168.31.225/33hao/shop';
+$config['cms_site_url'] 		= 'http://192.168.31.225/33hao/cms';
+$config['microshop_site_url'] 	= 'http://192.168.31.225/33hao/microshop';
+$config['circle_site_url'] 		= 'http://192.168.31.225/33hao/circle';
+$config['admin_site_url'] 		= 'http://192.168.31.225/33hao/admin';
+$config['mobile_site_url'] 		= 'http://192.168.31.225/33hao/mobile';
+$config['wap_site_url'] 		= 'http://192.168.31.225/33hao/wap';
+$config['chat_site_url'] 		= 'http://192.168.31.225/33hao/chat';
+$config['node_site_url'] 		= 'http://::1:8090';
+$config['upload_site_url']		= 'http://192.168.31.225/33hao/data/upload';
+$config['resource_site_url']	= 'http://192.168.31.225/33hao/data/resource';
+>>>>>>> origin
 $config['version'] 		= '201505251201';
 $config['setup_date'] 	= '2015-09-01 00:39:55';
 $config['gip'] 			= 0;

@@ -55,6 +55,7 @@ class goods_classModel extends Model
             foreach ((array) $this->getGoodsClassList(array()) as $v) {
                 $id = $v['gc_id'];
                 $pid = $v['gc_parent_id'];
+                
                 $data['data'][$id] = $v;
                 $data['parent'][$id] = $pid;
                 $data['children'][$pid][] = $id;
@@ -68,6 +69,7 @@ class goods_classModel extends Model
             }
             wkcache('gc_class', $data);
         }
+        
         return $this->cachedData = $data;
     }
 
@@ -121,6 +123,8 @@ class goods_classModel extends Model
      */
     public function getGoodsClassList($condition, $field = '*') {
         $result = $this->table('goods_class')->field($field)->where($condition)->order('gc_parent_id asc,gc_sort asc,gc_id asc')->limit(false)->select();
+//        var_dump($result);
+//        exit();
         return $result;
     }
     

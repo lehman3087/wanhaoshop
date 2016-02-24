@@ -197,12 +197,13 @@ class memberModel extends Model {
 	//	$check_member_email	= $this->infoMember(array('member_email'=>trim($register_info['email'])));
 	//	if(is_array($check_member_email) and count($check_member_email)>0) {
          //           return array('error' => '邮箱已存在');
-	//	}
+	//	},'member_mobile'=>trim($register_info['username'])
 
 		// 会员添加
 		$member_info	= array();
 		$member_info['member_name']		= $register_info['username'];
                 $member_info['member_passwd']		= $register_info['password'];
+                $member_info['member_mobile']		= $register_info['username'];
 		
 		//$member_info['member_email']		= $register_info['email'];
 		$insert_id	= $this->addMember($member_info);
@@ -517,6 +518,9 @@ class memberModel extends Model {
 		}
 		if($conditon_array['member_name'] != '') {
 			$condition_sql	.= " and member_name='".$conditon_array['member_name']."'";
+		}
+                if($conditon_array['member_mobile'] != '') {
+			$condition_sql	.= " and member_mobile='".$conditon_array['member_mobile']."'";
 		}
 		if($conditon_array['member_passwd'] != '') {
 			$condition_sql	.= " and member_passwd='".$conditon_array['member_passwd']."'";

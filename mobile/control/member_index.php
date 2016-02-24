@@ -109,19 +109,19 @@ class member_indexControl extends mobileMemberControl {
             }
         }
         
-        public function upAreaOp() {
-            $model_member	=       Model('member');
-            $member_array['member_areaid']	= $_REQUEST['member_areaid'];
-            $member_array['member_cityid']	= $_REQUEST['member_cityid'];
-            $member_array['member_provinceid']	= $_REQUEST['member_provinceid'];
-            
-            $update = $model_member->editMember(array('member_id'=>$this->member_info['member_id']),$member_array);
-            if($update){
-                    output_suc('1');
-            }else{
-                    output_special_code('10500');
-            }
-        }
+//        public function upAreaOp() {
+//            $model_member	=       Model('member');
+//            $member_array['member_areaid']	= $_REQUEST['member_areaid'];
+//            $member_array['member_cityid']	= $_REQUEST['member_cityid'];
+//            $member_array['member_provinceid']	= $_REQUEST['member_provinceid'];
+//            
+//            $update = $model_member->editMember(array('member_id'=>$this->member_info['member_id']),$member_array);
+//            if($update){
+//                    output_suc('1');
+//            }else{
+//                    output_special_code('10500');
+//            }
+//        }
         
         public function upAreaOp() {
             $model_member	=       Model('member');
@@ -139,7 +139,27 @@ class member_indexControl extends mobileMemberControl {
         
         public function upPhoneOp() {
             $model_member	=       Model('member');
+            $member_array['member_email']	= $_REQUEST['member_mobile'];
+            $check_member	= $this->infoMember(array('member_mobile'=>trim($_REQUEST['member_mobile'])));
+		if(is_array($check_member) and count($check_member) > 0) {
+                    return array('error' => '10406');
+		}
+                
+            $update = $model_member->editMember(array('member_id'=>$this->member_info['member_id']),$member_array);
+            if($update){
+                    output_suc('1');
+            }else{
+                    output_special_code('10500');
+            }
+        }
+        
+        public function upEmailOp() {
+            $model_member	=       Model('member');
             $member_array['member_email']	= $_REQUEST['member_email'];
+            $check_member	= $this->infoMember(array('member_email'=>trim($_REQUEST['member_email'])));
+		if(is_array($check_member) and count($check_member) > 0) {
+                    return array('error' => '10406');
+		}
             
             $update = $model_member->editMember(array('member_id'=>$this->member_info['member_id']),$member_array);
             if($update){
@@ -149,10 +169,15 @@ class member_indexControl extends mobileMemberControl {
             }
         }
         
+        
         public function upUsernameOp() {
             $model_member	=       Model('member');
             $member_array['member_name']	= $_REQUEST['member_name'];
-            
+            $check_member	= $this->infoMember(array('member_name'=>trim($_REQUEST['member_name'])));
+		if(is_array($check_member) and count($check_member) > 0) {
+                    return array('error' => '10406');
+		}
+                
             $update = $model_member->editMember(array('member_id'=>$this->member_info['member_id']),$member_array);
             if($update){
                     output_suc('1');

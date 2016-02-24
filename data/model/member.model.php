@@ -188,7 +188,7 @@ class memberModel extends Model {
 		}
 
         //     验证用户名是否重复
-		$check_member_name	= $this->infoMember(array('member_name'=>trim($register_info['username'])));
+		$check_member_name	= $this->infoMember(array('member_name|member_mobile'=>trim($register_info['username'])));
 		if(is_array($check_member_name) and count($check_member_name) > 0) {
                     return array('error' => '10406');
 		}
@@ -518,6 +518,9 @@ class memberModel extends Model {
 		}
 		if($conditon_array['member_name'] != '') {
 			$condition_sql	.= " and member_name='".$conditon_array['member_name']."'";
+		}
+                if($conditon_array['member_name|member_mobile'] != '') {
+			$condition_sql	.= " and member_name='".$conditon_array['member_name']."' or member_mobile='".$conditon_array['member_name']."'";
 		}
                 if($conditon_array['member_mobile'] != '') {
 			$condition_sql	.= " and member_mobile='".$conditon_array['member_mobile']."'";

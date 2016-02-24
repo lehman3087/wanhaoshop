@@ -247,6 +247,8 @@ class goods_classControl extends SystemControl{
 		}
 
 		$class_array = $model_class->getGoodsClassInfoById(intval($_GET['gc_id']));
+                
+                //var_dump($class_array);
 		if (empty($class_array)){
 			showMessage($lang['goods_class_batch_edit_paramerror']);
 		}
@@ -254,7 +256,10 @@ class goods_classControl extends SystemControl{
 		//类型列表
 		$model_type	= Model('type');
 		$type_list	= $model_type->typeList(array('order'=>'type_sort asc'), '', 'type_id,type_name,class_id,class_name');
-		$t_list = array();
+		
+                
+                
+                $t_list = array();
 		if(is_array($type_list) && !empty($type_list)){
 			foreach($type_list as $k=>$val){
 				$t_list[$val['class_id']]['type'][$k] = $val;
@@ -277,7 +282,10 @@ class goods_classControl extends SystemControl{
 	    if (file_exists($pic_name)) {
 	        $class_array['pic'] = UPLOAD_SITE_URL.'/'.ATTACH_COMMON.'/category-pic-'.$class_array['gc_id'].'.jpg';
 	    }
-
+                
+            
+               
+                
 		Tpl::output('type_list',$t_list);
 		Tpl::output('class_array',$class_array);
 		$this->links[] = array('url'=>'act=goods_class&op=goods_class_edit','lang'=>'nc_edit');

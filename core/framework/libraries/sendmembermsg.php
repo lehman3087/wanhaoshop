@@ -68,7 +68,10 @@ class sendMemberMsg {
 //            return false;
 //        }
         
+        
         $this->pushAndroidAll($param);
+        
+        
         
         $tpl_info = $msg_tpl[$this->code];
 

@@ -97,7 +97,8 @@ class noticeControl extends SystemControl{
                                     $Msg['content']=$content;
                                     $Msg['uri']=$message_uri;
                                     $Msg['invalid']=strtotime($message_invalid);
-                                    QueueClient::push('sendMemberMsg', $Msg);
+                                    $param['param'] = $Msg;
+                                    QueueClient::push('sendMemberMsg', $param);
                                 }
 				//跳转
 				$this->log(L('notice_index_send'),1);

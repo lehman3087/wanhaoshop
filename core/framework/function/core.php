@@ -1424,6 +1424,7 @@ function write_file($filepath, $data, $mode = null)
 
     $data = "<?php defined('InShopNC') or exit('Access Invalid!'); return ".$data.";";
     $mode = $mode == 'append' ? FILE_APPEND : null;
+    
     if (false === file_put_contents($filepath,($data),$mode)){
         return false;
     }else{

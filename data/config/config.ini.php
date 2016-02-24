@@ -2,6 +2,7 @@
 // defined('InShopNC') or exit('Access Invalid!');
 
 $config = array();
+
 $config['base_site_url'] 		= 'http://whao.a-caggie.cn';
 $config['shop_site_url'] 		= 'http://whao.a-caggie.cn/shop';
 $config['cms_site_url'] 		= 'http://whao.a-caggie.cn/cms';
@@ -14,6 +15,7 @@ $config['chat_site_url'] 		= 'http://whao.a-caggie.cn/chat';
 $config['node_site_url'] 		= 'http://::1:8090';
 $config['upload_site_url']		= 'http://whao.a-caggie.cn/data/upload';
 $config['resource_site_url']	= 'http://whao.a-caggie.cn/data/resource';
+
 $config['version'] 		= '201505251201';
 $config['setup_date'] 	= '2015-09-01 00:39:55';
 $config['gip'] 			= 0;

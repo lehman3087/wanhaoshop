@@ -174,6 +174,7 @@ class member_indexControl extends mobileMemberControl {
         
         public function upUsernameOp() {
             $model_member	=       Model('member');
+            
             $member_array['member_name']	= $_REQUEST['member_name'];
             $check_member	= $model_member->infoMember(array('member_name'=>trim($_REQUEST['member_name'])));
 		if(is_array($check_member) and count($check_member) > 0) {
